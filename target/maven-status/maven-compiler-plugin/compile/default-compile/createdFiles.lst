@@ -1,2 +1,7 @@
 com\quanlysinhvien\controller\admin\HomeController.class
+com\quanlysinhvien\controller\admin\Qlhv_BaocaoController.class
 com\quanlysinhvien\filter\AuthorizationFilter.class
+com\quanlysinhvien\controller\admin\Qlhv_HosoController.class
+com\quanlysinhvien\controller\dangnhap\HomeController.class
+com\quanlysinhvien\controller\admin\Qlhv_Edit_studentController.class
+com\quanlysinhvien\controller\admin\Hoso_Add_studentController.class

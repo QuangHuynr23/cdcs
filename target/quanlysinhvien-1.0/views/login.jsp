@@ -8,7 +8,7 @@
         <meta charset="utf-8" />
         <title>Quản Lý Sinh Viên Mật Mã</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-      </head>
+    </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
 		<!-- Spinner Start -->
@@ -31,7 +31,7 @@
 						<div
 							class="d-flex align-items-center justify-content-between mb-3">
 							<a href="index.html" class="">
-								<h3 class="text-primary">Quản Lý Sinh Viên</h3>
+								<h3 class="text-primary">Quản Lý Sinh Viên KMA</h3>
 							</a>
 
 						</div>
@@ -49,13 +49,11 @@
 								class="d-flex align-items-center justify-content-between mb-4">
 								<div class="form-check">
 									<input type="checkbox" class="form-check-input" id="remeber-me">
-									<label class="form-check-label" for="remeber-me">Remember
-										me?</label>
+									<label class="form-check-label" for="remeber-me">Remember me?</label>
 								</div>
 							</div>
 						</form>
-						<button type="submit" class="btn btn-primary py-3 w-100 mb-4">Đăng
-							Nhập</button>
+						<button type="submit" class="btn btn-primary py-3 w-100 mb-4">Đăng Nhập</button>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/admin/home"})
+@WebServlet(urlPatterns = {"/admin"})
 public class HomeController extends HttpServlet{
 
 	/**
@@ -25,4 +25,5 @@ public class HomeController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
     }
+    
 }

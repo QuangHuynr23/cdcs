@@ -10,8 +10,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
 <!-- Favicon -->
-<link href="img/logoico.png" rel="icon" />
-
+<!-- <link href="img/logoico.png" rel="icon" /> -->
+<link href="<c:url value='/template/admin/img/logoico.png'/>" rel="icon" />
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,23 +30,22 @@
 	rel="stylesheet" />
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+<link href="<c:url value='/template/admin/css/bootstrap.min.css'/>" rel="stylesheet" />
 
 <!-- Template Stylesheet -->
-<link href="css/style.css" rel="stylesheet" />
+<!-- <link href="css/style.css" rel="stylesheet" /> -->
+<link href="<c:url value='/template/admin/css/style.css'/>" rel="stylesheet" />
+<dec:head/>
 </head>
-
-
 <body id="LoginForm">
-	<dec:body/>	
+	<dec:body />
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
 	<!-- Template Javascript -->
-	<script src="js/main.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+	<script src="<c:url value='/template/admin/js/main.js'/>"></script>
 </body>
-
 </html>
