@@ -1,5 +1,7 @@
 package com.quanlysinhvien.service;
 
-public interface IUserService {
+import com.quanlysinhvien.model.UserModel;
 
+public interface IUserService {
+	UserModel findByUserEmailAndPassword(String email, String password);
 }

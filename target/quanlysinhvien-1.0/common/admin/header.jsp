@@ -19,11 +19,11 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img class="rounded-circle me-lg-2" src="<c:url value='/template/admin/img/male.png'/>" alt=""
                             style="width: 40px; height: 40px" />
-                        <span class="d-none d-lg-inline-flex">Nguyễn Quang Huy</span>
+                        <span class="d-none d-lg-inline-flex">Wellcome, ${USERMODEL.name}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Đăng xuất</a>
+                        <a href="<c:url value='/dang-nhap'/>" class="dropdown-item">Đăng xuất</a>
                     </div>
                 </div>
             </div>

@@ -36,13 +36,13 @@
 
 						</div>
 						<h3>Đăng Nhập</h3>
-						<form>
+						<form action="<c:url value='/dang-nhap'/> " id ="login" method="post">
 							<div class="form-floating mb-3">
-								<input type="email" class="form-control" id="email"
-									placeholder="name@example.com"> <label for="email">Email</label>
+								<input type="email" class="form-control" id="email" name="email"
+									placeholder="name@example.com"> <label for="email" id="email">Email</label>
 							</div>
 							<div class="form-floating mb-4">
-								<input type="password" class="form-control" id="password"
+								<input type="password" class="form-control" id="password" name ="password" 
 									placeholder="Password"> <label for="password">Password</label>
 							</div>
 							<div
@@ -52,8 +52,9 @@
 									<label class="form-check-label" for="remeber-me">Remember me?</label>
 								</div>
 							</div>
+							<button type="submit" value="login" class="btn btn-primary py-3 w-100 mb-4">Đăng Nhập</button>
 						</form>
-						<button type="submit" class="btn btn-primary py-3 w-100 mb-4">Đăng Nhập</button>
+						
 					</div>
 				</div>
 			</div>

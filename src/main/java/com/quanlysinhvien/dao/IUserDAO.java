@@ -1,5 +1,8 @@
 package com.quanlysinhvien.dao;
 
-public interface IUserDAO {
+import com.quanlysinhvien.model.UserModel;
 
+public interface IUserDAO extends GenericDAO<UserModel>{
+
+	public UserModel findByUserEmailAndPassword(String email, String password);
 }
