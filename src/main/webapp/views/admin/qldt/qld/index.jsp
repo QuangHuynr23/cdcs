@@ -39,11 +39,11 @@
             <div class="bg-light rounded h-50 p-4">
                 <div class="row mb-5">
                     <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <a href="add-grade.html" type="button" class="btn btn-block btn-primary btn-lg"
+                        <a href="<c:url value='/admin/qldt/qld/add-grade'/>" type="button" class="btn btn-block btn-primary btn-lg"
                             style="width: 70%; height: 70px">Thêm điểm</a>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <a href="find-grade.html" type="button" class="btn btn-block btn-primary btn-lg"
+                        <a href="<c:url value='/admin/qldt/qld/find-grade'/>" type="button" class="btn btn-block btn-primary btn-lg"
                             style="width: 70%; height: 70px">Tra cứu điểm</a>
                     </div>
                 </div>

@@ -52,7 +52,7 @@
 									<td>AT170228</td>
 									<td>AT17B</td>
 									<td><a class="btn btn-primary btn-sm"
-										href="edit-student.html"> <i class="bi bi-pencil-square"></i>
+										href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
 									</a> <a href="#" class="btn btn-danger btn-sm"
 										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
 											class="bi bi-trash-fill"></i>
@@ -64,7 +64,7 @@
 									<td>AT170233</td>
 									<td>AT17B</td>
 									<td><a class="btn btn-primary btn-sm"
-										href="edit-student.html"> <i class="bi bi-pencil-square"></i>
+										href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
 									</a> <a href="#" class="btn btn-danger btn-sm"
 										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
 											class="bi bi-trash-fill"></i>

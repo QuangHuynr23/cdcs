@@ -1,26 +1,19 @@
 package com.quanlysinhvien.model;
 
-public class KmaclassModel {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class KmaclassModel extends AbstractModel{
 	private String code;
 	private String name;
 	private String course_id;
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCourse_id() {
-		return course_id;
-	}
-	public void setCourse_id(String course_id) {
-		this.course_id = course_id;
-	}
-	
+
 }

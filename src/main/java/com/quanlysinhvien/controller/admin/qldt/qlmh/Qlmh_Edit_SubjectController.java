@@ -18,7 +18,7 @@ public class Qlmh_Edit_SubjectController extends HttpServlet{
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
-    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlmh/edit-subject.jsp");
+    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/edit-subject.jsp");
 		rd.forward(req, resp);
     }
 

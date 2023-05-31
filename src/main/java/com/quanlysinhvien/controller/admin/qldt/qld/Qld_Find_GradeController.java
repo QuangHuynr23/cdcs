@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/admin/qldt/qld/list-grande"})
-public class Qld_List_GrandeController extends HttpServlet{
+@WebServlet(urlPatterns = {"/admin/qldt/qld/find-grade"})
+public class Qld_Find_GradeController extends HttpServlet{
 
 	/**
 	 * 
@@ -18,7 +18,7 @@ public class Qld_List_GrandeController extends HttpServlet{
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
-    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qld/list-grande.jsp");
+    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qld/find-grade.jsp");
 		rd.forward(req, resp);
     }
 

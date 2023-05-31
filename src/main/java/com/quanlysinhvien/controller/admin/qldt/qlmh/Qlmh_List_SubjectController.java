@@ -18,7 +18,7 @@ public class Qlmh_List_SubjectController extends HttpServlet{
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
-    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlmh/list-subject.jsp");
+    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/list-subject.jsp");
 		rd.forward(req, resp);
     }
 

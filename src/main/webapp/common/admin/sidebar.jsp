@@ -22,30 +22,30 @@
           <a href="../../index.html" class="nav-item nav-link">
             <i class="fa fa-tachometer-alt me-2"></i>Trang Chủ</a>
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            <a href="<c:url value='/admin/qlhv'/>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
               <i class="fa-solid fa-user-graduate"></i>Quản lý học viên</a>
             <div class="dropdown-menu bg-transparent border-0">
-              <a href="../../qlsv/hs/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qlhv/hs'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Hồ sơ</a>
-              <a href="../../qlsv/bc/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qlhv/bc'/>" class="dropdown-item">
                 <i class="fa-solid fa-calendar-days"></i>&nbsp;Báo cáo thống kê</a>
             </div>
           </div>
           <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            <a href="<c:url value='/admin/qldt'/>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
               <i class="fa-solid fa-person"></i>Quản lý đào tạo</a>
             <div class="dropdown-menu bg-transparent border-0">
-              <a href="qldt/qld/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qldt/qld'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Quản lý điểm</a>
-              <a href="qldt/qlm/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qldt/qlmh'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Quản lý môn học</a>
-              <a href="qldt/qlgv/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qldt/qlgv'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Quản lý giảng viên</a>
-              <a href="qldt/tkb/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qldt/tkb'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Lập lịch</a>
               <a href="qldt/xlhv/index.html" class="dropdown-item">
@@ -53,7 +53,7 @@
               <a href="qldt/qltn/index.html" class="dropdown-item">
                 <i class="fa-solid fa-list"></i>&nbsp;Xét duyệt tốt nghiệp
               </a>
-              <a href="qldt/other/index.html" class="dropdown-item">
+              <a href="<c:url value='/admin/qldt/pqht'/>" class="dropdown-item">
                 <i class="fa-solid fa-list"></i>&nbsp;Khác
               </a>
             </div>
