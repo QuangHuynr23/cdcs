@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hồ sơ học viên - Quản Lý Sinh Viên Mật Mã</title>
+<title>Hồ sơ sinh viên - Quản Lý Sinh Viên Mật Mã</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 </head>
 
@@ -28,7 +28,7 @@
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
 					<div class="row g-4">
-						<h3>Hồ sơ học viên</h3>
+						<h3>Hồ sơ sinh viên</h3>
 					</div>
 				</div>
 			</div>
@@ -39,24 +39,12 @@
 						<div class="col-lg-6 col-sm-6 col-xs-6">
 							<a href="<c:url value='/admin/qlhv/hs/add-student'/>" type="button"
 								class="btn btn-block btn-primary btn-lg"
-								style="width: 70%; height: 70px">Thêm học viên</a>
+								style="width: 70%; height: 70px">Thêm sinh viên</a>
 						</div>
 						<div class="col-lg-6 col-sm-6 col-xs-6">
 							<a href="<c:url value='/admin/qlhv/hs/list-student'/>" type="button"
 								class="btn btn-block btn-primary btn-lg"
-								style="width: 70%; height: 70px">Danh sách học viên</a>
-						</div>
-					</div>
-					<div class="row mb-5 -bottom-3">
-						<div class="col-lg-6 col-sm-6 col-xs-6">
-							<a href="<c:url value='/admin/qlhv/hs/edit-student'/>" type="button"
-								class="btn btn-block btn-primary btn-lg"
-								style="width: 70%; height: 70px">Chỉnh sửa học viên</a>
-						</div>
-						<div class="col-lg-6 col-sm-6 col-xs-6">
-							<a href="<c:url value='/admin/qlhv/hs/infor-student'/>" type="button"
-								class="btn btn-block btn-primary btn-lg"
-								style="width: 70%; height: 70px">Thông tin học viên</a>
+								style="width: 70%; height: 70px">Danh sách sinh viên</a>
 						</div>
 					</div>
 				</div>

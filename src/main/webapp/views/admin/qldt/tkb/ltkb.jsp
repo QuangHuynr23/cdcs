@@ -41,9 +41,9 @@
                                 <label for="affiliate" class="form-label">Khoá</label>
                                 <select class="form-select" id="affiliate" form="form-input">
                                     <option value="0">Chọn</option>
-                                    <option value="h33">H33</option>
-                                    <option value="h34">H34</option>
-                                    <option value="h35">H35</option>
+                                    <option value="h33">AT17</option>
+                                    <option value="h34">DT4</option>
+                                    <option value="h35">CT5</option>
                                 </select>
                             </div>
                         </div>

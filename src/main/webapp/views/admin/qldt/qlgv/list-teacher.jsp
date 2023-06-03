@@ -52,7 +52,7 @@
                             
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Lê Đức Thuận</td>
+                                <td>Thái Thị Thanh Vân</td>
                                 <td>GV_1</td>
                                 <td>Công nghệ thông tin</td>
                                 <td><a href="mailto:leducthuan255@gmail.com">leducthuan255@gmail.com</a></td>
@@ -67,8 +67,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Lê Đức Thuận</td>
+                                <th scope="row">2</th>
+                                <td>Thái Thị Thanh Vân</td>
                                 <td>GV_1</td>
                                 <td>Công nghệ thông tin</td>
                                 <td><a href="mailto:leducthuan255@gmail.com">leducthuan255@gmail.com</a></td>

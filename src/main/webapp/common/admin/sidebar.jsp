@@ -23,7 +23,7 @@
             <i class="fa fa-tachometer-alt me-2"></i>Trang Chủ</a>
           <div class="nav-item dropdown">
             <a href="<c:url value='/admin/qlhv'/>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-              <i class="fa-solid fa-user-graduate"></i>Quản lý học viên</a>
+              <i class="fa-solid fa-user-graduate"></i>Quản lý sinh viên</a>
             <div class="dropdown-menu bg-transparent border-0">
               <a href="<c:url value='/admin/qlhv/hs'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
@@ -36,9 +36,6 @@
             <a href="<c:url value='/admin/qldt'/>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
               <i class="fa-solid fa-person"></i>Quản lý đào tạo</a>
             <div class="dropdown-menu bg-transparent border-0">
-              <a href="<c:url value='/admin/qldt/qld'/>" class="dropdown-item">
-                <i class="fa-solid fa-circle-plus"></i>
-                &nbsp;Quản lý điểm</a>
               <a href="<c:url value='/admin/qldt/qlmh'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Quản lý môn học</a>

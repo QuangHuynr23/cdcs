@@ -69,7 +69,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <!-- <div class="col-sm-4">
                             <div class="form-group mb-3">
                                 <label for="semester" class="form-label">Kỳ học</label>
                                 <select class="form-select" id="semester" form="form-input" name="semester">
@@ -78,7 +78,7 @@
                                     <option value="2">2</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
                 <button type="submit" form="form" class="btn btn-primary">Thêm Học Phần</button>

@@ -47,7 +47,6 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 			}
 			return results;
 		} catch (SQLException e) {
-			// TODO: handle exception
 			return null;
 		}finally {
 			try {
@@ -60,8 +59,7 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 				if (resultSet != null) {
 					resultSet.close();
 				}
-			} catch (SQLException x) {
-				// TODO: handle exception
+			} catch (SQLException x) { 
 				return null;
 			}
 		}
@@ -74,7 +72,7 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 				Object parameter = parameters[i];
 				int index = i+1;
 				if (parameter instanceof Long) {
-					preparedStatement.setLong(index, (long) parameter);
+					preparedStatement.setLong(index, (long) parameter);				
 				}else if (parameter instanceof String) {
 					preparedStatement.setString(index, (String) parameter);
 				}else if (parameter instanceof Double) {

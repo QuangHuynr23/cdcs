@@ -46,7 +46,7 @@
 							data-bs-toggle="dropdown"> <img
 							class="rounded-circle me-lg-2" src="../../img/male.png" alt=""
 							style="width: 40px; height: 40px" /> <span
-							class="d-none d-lg-inline-flex">Văn Hoàng Phúc</span>
+							class="d-none d-lg-inline-flex">Nguyễn Quang Huy</span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -73,7 +73,7 @@
 							<button class="nav-link active" id="student-tab"
 								data-bs-toggle="tab" data-bs-target="#student" type="button"
 								role="tab" aria-controls="student" aria-selected="true">
-								Học Viên</button>
+								Sinh Viên</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="household-tab" data-bs-toggle="tab"
@@ -94,12 +94,6 @@
 							</button>
 						</li>
 						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="info-tab" data-bs-toggle="tab"
-								data-bs-target="#info" type="button" role="tab"
-								aria-controls="info" aria-selected="false">Thông Tin
-								Quân Nhân</button>
-						</li>
-						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="orther-tab" data-bs-toggle="tab"
 								data-bs-target="#orther" type="button" role="tab"
 								aria-controls="orther" aria-selected="false">Khác</button>
@@ -108,7 +102,7 @@
 					<div class="tab-content" id="input">
 						<div class="tab-pane fade show active" id="student"
 							role="tabpanel" aria-labelledby="student-tab">
-							<h5>Học Viên</h5>
+							<h5>Sinh Viên</h5>
 							<form id="form-input">
 								<div class="row g-4 mb-3">
 									<div class="col-sm-6 mb-3">

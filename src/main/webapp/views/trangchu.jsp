@@ -44,42 +44,42 @@
 			</thead>
 			<tbody>
 				<tr class="row_table">
-					<td>admin01@lch.com</td>
-					<td>admin01</td>
+					<td>quanghuynr23@gmail.com</td>
+					<td>123456</td>
 					<td>Admin</td>
 					<td>Tất cả</td>
 				</tr>
 				<tr>
-					<td>student01@lch.com</td>
-					<td>student01</td>
+					<td>thelong@gmail.com</td>
+					<td>123456</td>
 					<td>Học viên</td>
 					<td>Xem điểm, thêm thông tin của chính mình</td>
 				</tr>
 				<tr class="row_table">
-					<td>teacher01@lch.com</td>
-					<td>teacher01</td>
+					<td>vinh@gmail.com</td>
+					<td>123456</td>
 					<td>Giảng viên</td>
 					<td>Sửa thông tin của chính mình</td>
 				</tr>
 				<tr>
-					<td>department01@lch.com</td>
-					<td>department01</td>
+					<td>trang@gmail.com</td>
+					<td>123456</td>
 					<td>Khảo thí</td>
 					<td>Thêm tất cả điểm</td>
 				</tr>
 				<tr class="row_table">
-					<td>department02@lch.com</td>
-					<td>department02</td>
+					<td>quanghuy2@gmail.com</td>
+					<td>123456</td>
 					<td>Hệ QLSV</td>
 					<td>Thêm thông tin cho sinh viên</td>
 				</tr>
-				<tr>
-					<td>department03@lch.com</td>
-					<td>department03</td>
+ 				<tr>
+					<td>quynhtrang@gmail.com</td>
+					<td>123456</td>
 					<td>Đào tạo</td>
 					<td>Lập lịch học<br> quản lý môn học
 					</td>
-				</tr>
+				</tr> 
 
 			</tbody>
 		</table>

@@ -39,43 +39,17 @@
 						<div class="row g-4">
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
-									<label for="school_year_id" class="form-label">Năm học</label>
-									<select class="form-select" id="bank">
-										<option value="0">Chọn</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group mb-3">
-									<label for="semester" class="form-label">Kỳ học</label> <select
-										class="form-select" id="semester">
-										<option value="0">Chọn</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group mb-3">
 									<label for="department" class="form-label">Khoa</label> <select
 										class="form-select" id="department">
 										<option value="0">Chọn</option>
 										<option value="AT">An toàn thông tin</option>
 										<option value="CT">Công nghệ thông tin</option>
-										<option value="CB">Cơ bản</option>
-										<option value="MM">Mật mã</option>
 										<option value="DT">Điện tử viễn thông</option>
 									</select>
 								</div>
 							</div>
 						</div>
-						<button type="submit" form="form" class="btn btn-primary">Tìm
-							kiếm môn học</button>
+						<button type="submit" form="form" class="btn btn-primary">Tra cứu</button>
 
 					</form>
 					<div
@@ -87,7 +61,7 @@
 									<th scope="col">Mã Môn</th>
 									<th scope="col">Tên Môn</th>
 									<th scope="col">Khoa</th>
-									<th scope="col">Kỳ học</th>
+									<th scope="col">Tín chỉ</th>
 									<th scope="col">&nbsp;</th>
 								</tr>
 							</thead>
