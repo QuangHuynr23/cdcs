@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class SchoolyearModel extends AbstractModel{
+public class SchoolyearModel extends AbstractModel<SchoolyearModel>{
 	private String display_name;
 	private String start;
 	private String end;

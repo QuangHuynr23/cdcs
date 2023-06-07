@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class StudentModel extends AbstractModel{
+public class StudentModel extends AbstractModel<StudentModel>{
 	private String code;
 	private String name;
 	private Boolean gender;

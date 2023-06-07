@@ -2,21 +2,18 @@ package com.quanlysinhvien.model;
 
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class AbstractModel {
+public class AbstractModel<T> {
 	private Long id;
 	private Timestamp createdat;
 	private Timestamp updatedat;
+	private List<T> listResult = new ArrayList<>();//Lấy danh sách cần hiển thị
 	
 }

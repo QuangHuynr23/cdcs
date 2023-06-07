@@ -1,5 +1,7 @@
 package com.quanlysinhvien.service;
 
-public interface IRoleService {
+import com.quanlysinhvien.model.RoleModel;
 
+public interface IRoleService {
+	RoleModel findByRoleId(Long id);
 }

@@ -1,5 +1,20 @@
 package com.quanlysinhvien.dao.impl;
 
-public class RoleDAO {
+import java.util.List;
+
+import com.quanlysinhvien.dao.IRoleDAO;
+import com.quanlysinhvien.mapper.RoleMapper;
+import com.quanlysinhvien.model.RoleModel;
+
+public class RoleDAO extends AbstractDAO<RoleModel> implements IRoleDAO{
+
+	@Override
+	public RoleModel findByRoleId(Long id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder("SELECT * FROM roles AS r");
+		sql.append(" WHERE id = ? ");
+        List<RoleModel> roleModels = query(sql.toString(), new RoleMapper(), id);
+		return roleModels.isEmpty() ? null : roleModels.get(0);
+	}
 
 }

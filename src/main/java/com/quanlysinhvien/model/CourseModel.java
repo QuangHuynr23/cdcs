@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CourseModel extends AbstractModel {
+public class CourseModel extends AbstractModel<CourseModel> {
 	private String code;
 	private String department_id;
 	private String semester_id;

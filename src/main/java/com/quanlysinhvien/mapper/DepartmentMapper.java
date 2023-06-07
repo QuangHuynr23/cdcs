@@ -18,6 +18,7 @@ public class DepartmentMapper implements RowMapper<DepartmentModel>{
 			department.setUpdatedat(rs.getTimestamp("updatedat"));
 			return department;
 		} catch (SQLException e) {
+			System.out.println("Lỗi ở DepartmentMapper");
 			return null;
 		}
 	}

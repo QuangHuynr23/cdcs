@@ -15,12 +15,14 @@ public class SubjectMapper implements RowMapper<SubjectModel>{
 			subject.setId(rs.getLong("id"));
 			subject.setCode(rs.getString("code"));
 			subject.setName(rs.getString("name"));
-			subject.setAll(rs.getInt("all"));
+			subject.setAlls(rs.getInt("alls"));
 			subject.setTheory(rs.getInt("theory"));
 			subject.setPractice(rs.getInt("practice"));
 			subject.setExercise(rs.getInt("exercise"));
+			subject.setDepartment_id(rs.getLong("department_id"));
 			subject.setCreatedat(rs.getTimestamp("createdat"));
 			subject.setUpdatedat(rs.getTimestamp("updatedat"));
+			subject.setCourse_load(rs.getInt("course_load"));
 			return subject;
 		} catch (SQLException e) {
 			return null;

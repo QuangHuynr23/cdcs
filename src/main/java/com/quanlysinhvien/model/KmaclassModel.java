@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class KmaclassModel extends AbstractModel{
+public class KmaclassModel extends AbstractModel<KmaclassModel>{
 	private String code;
 	private String name;
 	private String course_id;

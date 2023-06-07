@@ -1,5 +1,7 @@
 package com.quanlysinhvien.dao;
 
-public interface IRoleDAO {
+import com.quanlysinhvien.model.RoleModel;
 
+public interface IRoleDAO extends GenericDAO<RoleModel>{
+	RoleModel findByRoleId(Long id);
 }

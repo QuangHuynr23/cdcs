@@ -2,6 +2,7 @@ package com.quanlysinhvien.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,12 +12,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class SubjectModel extends AbstractModel{
-	private String code;
-	private String name;
-	private Integer all;
-	private Integer theory;
-	private Integer practice;
-	private Integer exercise;
-
+@EqualsAndHashCode(callSuper=false)
+public class SubjectModel extends AbstractModel<SubjectModel>{
+	private String code; //Mã học phần
+	private String name; // Tên môn
+	private Integer alls; // Tổng số tiết
+	private Integer theory; //Lý thuyết
+	private Integer practice; //Thực hành
+	private Integer exercise; //Bài tập
+	private Long department_id;	//id Khoa
+	private Integer course_load; // Tín chỉ
 }

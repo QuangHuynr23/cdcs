@@ -182,40 +182,40 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 		return null;
 	}
 
-	@Override
-	public int count(String sql, Object... parameters) {
-		// TODO Auto-generated method stub
-		Connection connection = null;
-		PreparedStatement statement = null;
-		ResultSet resultSet = null;
-		try {
-			int count = 0;
-			connection = getConnection();
-			statement = connection.prepareStatement(sql);
-			setParameter(statement, parameters);
-			resultSet = statement.executeQuery();
-			while (resultSet.next()) {
-				count = resultSet.getInt(1);
-			}
-			return count;
-		} catch (SQLException e) {
-			// TODO: handle exception
-			return 0;
-		}finally {
-			try {
-				if (connection != null) {
-					connection.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (resultSet != null) {
-					resultSet.close();
-				}
-			} catch (SQLException x) {
-				// TODO: handle exception
-				return 0;
-			}
-		}
-	}
+//	@Override
+//	public int count(String sql, Object... parameters) {
+//		// TODO Auto-generated method stub
+//		Connection connection = null;
+//		PreparedStatement statement = null;
+//		ResultSet resultSet = null;
+//		try {
+//			int count = 0;
+//			connection = getConnection();
+//			statement = connection.prepareStatement(sql);
+//			setParameter(statement, parameters);
+//			resultSet = statement.executeQuery();
+//			while (resultSet.next()) {
+//				count = resultSet.getInt(1);
+//			}
+//			return count;
+//		} catch (SQLException e) {
+//			// TODO: handle exception
+//			return 0;
+//		}finally {
+//			try {
+//				if (connection != null) {
+//					connection.close();
+//				}
+//				if (statement != null) {
+//					statement.close();
+//				}
+//				if (resultSet != null) {
+//					resultSet.close();
+//				}
+//			} catch (SQLException x) {
+//				// TODO: handle exception
+//				return 0;
+//			}
+//		}
+//	}
 }

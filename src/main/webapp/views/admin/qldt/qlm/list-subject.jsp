@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
 <meta charset="utf-8" />
@@ -35,12 +35,13 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
-					<form action="" method="get" id="form">
+					<form action="<c:url value="/admin/qldt/qlmh/list-subject"/>"
+						method="post" id="form">
 						<div class="row g-4">
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
 									<label for="department" class="form-label">Khoa</label> <select
-										class="form-select" id="department">
+										class="form-select" id="department" name="department">
 										<option value="0">Chọn</option>
 										<option value="AT">An toàn thông tin</option>
 										<option value="CT">Công nghệ thông tin</option>
@@ -49,7 +50,9 @@
 								</div>
 							</div>
 						</div>
-						<button type="submit" form="form" class="btn btn-primary">Tra cứu</button>
+
+						<button type="submit" form="form" class="btn btn-primary">Tra
+							cứu</button>
 
 					</form>
 					<div
@@ -62,38 +65,35 @@
 									<th scope="col">Tên Môn</th>
 									<th scope="col">Khoa</th>
 									<th scope="col">Tín chỉ</th>
+									<th scope="col">Tổng số tiết</th>
+									<th scope="col">ST Lý Thuyết</th>
+									<th scope="col">ST Thực Hành</th>
+									<th scope="col">ST Bài Tập</th>
+									<th scope="col">Thao tác</th>
 									<th scope="col">&nbsp;</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>CTDLGT</td>
-									<td>Cấu trúc dữ liệu và giải thuật</td>
-									<td>Công nghệ thông tin</td>
-									<td>5</td>
-									<td><a class="btn btn-primary btn-sm"
-										href="<c:url value='/admin/qldt/qlmh/edit-subject'/>"> <i class="bi bi-pencil-square"></i>
-									</a> <a href="#" class="btn btn-danger btn-sm"
+								<c:forEach var="item" items="${modelsubject.listResult}">
+									<tr>
+										<th scope="row">${item.id}</th>
+										<td>${item.code}</td>
+										<td>${item.name}</td>
+										<td>${item.department_name}</td>
+										<td>${item.course_load}</td>
+										<td>${item.alls}</td>
+										<td>${item.theory}</td>
+										<td>${item.practice}</td>
+										<td>${item.exercise}</td>
+										<td><a class="btn btn-primary btn-sm"
+											href="<c:url value='/admin/qldt/qlmh/edit-subject'/>"> <i
+												class="bi bi-pencil-square"></i>
+										</a> <a href="#" class="btn btn-danger btn-sm"
 										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
 											class="bi bi-trash-fill"></i>
-									</a></td>
-								</tr>
-								<tr>
-									<th scope="row">1</th>
-									<td>CTDLGT</td>
-									<td>Cấu trúc dữ liệu và giải thuật</td>
-									<td>Công nghệ thông tin</td>
-									<td>5</td>
-									<td><a class="btn btn-primary btn-sm"
-										href="edit-subject.html"> <i class="bi bi-pencil-square"></i>
-									</a> <a href="<c:url value='/admin/qldt/qlmh/edit-subject'/>" class="btn btn-danger btn-sm"
-										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
-											class="bi bi-trash-fill"></i>
-									</a></td>
-								</tr>
-								
-
+										</a></td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -121,7 +121,7 @@
 		</div>
 		<!-- Content End -->
 	</div>
-
+ 	
 </body>
 
 </html>

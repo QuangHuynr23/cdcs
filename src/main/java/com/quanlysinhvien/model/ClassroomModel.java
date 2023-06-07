@@ -6,12 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Getter
 @Setter
-public class ClassroomModel extends AbstractModel{
+public class ClassroomModel extends AbstractModel<ClassroomModel>{
 	private String code;
 	private String name;
 	private String subject_id;

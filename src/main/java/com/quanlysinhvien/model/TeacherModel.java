@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class TeacherModel extends AbstractModel{
+public class TeacherModel extends AbstractModel<TeacherModel>{
 	private String code;
 	private String name;
 	private String image;

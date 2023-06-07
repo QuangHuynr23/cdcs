@@ -2,6 +2,7 @@ package com.quanlysinhvien.filter;
 
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -12,10 +13,17 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.quanlysinhvien.constant.SystemConstant;
+import com.quanlysinhvien.model.UserModel;
+import com.quanlysinhvien.service.IRoleService;
+import com.quanlysinhvien.util.SessionUtil;
+
 public class AuthorizationFilter implements Filter{
 
 	private ServletContext context;
 	
+	@Inject
+	private IRoleService roleService;
 	
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -30,21 +38,21 @@ public class AuthorizationFilter implements Filter{
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
 		String url = request.getRequestURI();
-		chain.doFilter(servletRequest, servletResponse);
-//		if(url.contains("/admin")) {
-//			UserModel model =(UserModel) SessionUtil.getInstance().getValue(request,"USERMODEL");
-//			if (model != null) {
-//				if (model.getRoleModel().getCode().equals(SystemConstant.ADMIN)) {
-//					chain.doFilter(servletRequest, servletResponse);
-//				} else if (model.getRoleModel().getCode().equals(SystemConstant.USER)) {
-//					response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login&message=not_permission&alert=danger");
-//				}
-//			}else {
-//				response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login&message=not_login&alert=danger");
-//			}
-//		}else {
-//			chain.doFilter(servletRequest, servletResponse);
-//		}
+		if(url.contains("/admin")) {
+			UserModel model =(UserModel) SessionUtil.getInstance().getValue(request,"USERMODEL");
+			if (model != null) {
+				if (roleService.findByRoleId(model.getRolesid()).getRole_name().equals(SystemConstant.ADMIN)) {
+					chain.doFilter(servletRequest, servletResponse);
+				} else if (roleService.findByRoleId(model.getRolesid()).getRole_name().equals(SystemConstant.TEACHER)) {
+					response.sendRedirect(request.getContextPath()+"/dang-nhap");
+				}		
+			}else {
+				response.sendRedirect(request.getContextPath()+"/dang-nhap?action=login");
+			}
+		}
+		else {
+			chain.doFilter(servletRequest, servletResponse);
+		}
 	}
 
 	@Override

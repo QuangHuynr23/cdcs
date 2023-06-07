@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class UserModel extends AbstractModel{
+public class UserModel extends AbstractModel<UserModel>{
 	private String email;
 	private String name;
 	private String password;

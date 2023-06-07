@@ -23,7 +23,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="<c:url value='/dang-nhap'/>" class="dropdown-item">Đăng xuất</a>
+                        <a href="<c:url value='/dang-xuat?action=logout'/>" class="dropdown-item">Đăng xuất</a>
                     </div>
                 </div>
             </div>

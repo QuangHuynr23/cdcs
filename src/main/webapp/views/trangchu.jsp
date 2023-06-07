@@ -21,7 +21,7 @@
 			<h4 class="header_text">Quản lý sinh viên</h4>
 		</div>
 		<div class="btn" >
-		<a href="<c:url value='/dang-nhap'/>" styleV="text-decoration: none" class="btn_login">Đăng nhập</a>
+		<a href="<c:url value='/dang-nhap?action=login'/>" styleV="text-decoration: none" class="btn_login">Đăng nhập</a>
 			<%-- <button class="btn_login" src="<c:url value='/dang-nhap'/>">Đăng nhập</button> --%>
 		</div>
 

@@ -80,7 +80,7 @@ $(document).ready(function () {
 function removeRow(id, url) {
     if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
         $.ajax({
-            type: 'DELETE',
+            type: 'PUT',
             datatype: 'JSON',
             data: { id },
             url: url,
@@ -95,6 +95,7 @@ function removeRow(id, url) {
         });
     }
 }
+
 function submitForms() {
     document.getElementById('form1').submit();
     document.getElementById('form2').submit();

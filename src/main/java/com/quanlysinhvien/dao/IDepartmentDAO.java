@@ -1,5 +1,11 @@
 package com.quanlysinhvien.dao;
 
-public interface IDepartmentDAO {
+import java.util.List;
 
+import com.quanlysinhvien.model.DepartmentModel;
+
+public interface IDepartmentDAO extends GenericDAO<DepartmentModel>{
+	List<DepartmentModel> findAll();
+	List<DepartmentModel> findByCode(String code);
+	DepartmentModel findById (Long id);
 }

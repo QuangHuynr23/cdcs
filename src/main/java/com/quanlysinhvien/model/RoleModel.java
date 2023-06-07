@@ -11,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RoleModel extends AbstractModel{
+public class RoleModel extends AbstractModel<RoleModel>{
 	private String role_name;
 	private String role_symbol;
-
+	private Long id ;
 }
