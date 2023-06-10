@@ -15,5 +15,5 @@ public class AbstractModel<T> {
 	private Timestamp createdat;
 	private Timestamp updatedat;
 	private List<T> listResult = new ArrayList<>();//Lấy danh sách cần hiển thị
-	
+	private String type;
 }

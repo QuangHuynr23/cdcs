@@ -16,8 +16,9 @@ public class StudentModel extends AbstractModel<StudentModel>{
 	private String name;
 	private Boolean gender;
 	private String image;
-	private String Lop;
-	
+	private String lop;
+	private String position;
+	private String birthday;
 	private String bank_number;
 	private String bank;
 	private String school_year_id;

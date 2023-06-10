@@ -77,24 +77,6 @@ $(document).ready(function () {
         })
         .change();
 });
-function removeRow(id, url) {
-    if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
-        $.ajax({
-            type: 'PUT',
-            datatype: 'JSON',
-            data: { id },
-            url: url,
-            success: function (result) {
-                if (result.error === false) {
-                    alert(result.message);
-                    location.reload();
-                } else {
-                    alert('Đã có lỗi xảy ra. Vui lòng thử lại');
-                }
-            },
-        });
-    }
-}
 
 function submitForms() {
     document.getElementById('form1').submit();

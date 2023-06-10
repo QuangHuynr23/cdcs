@@ -20,6 +20,7 @@ public class SubjectService implements ISubjectService{
 	@Inject
 	private IDepartmentService departmentService;
 
+
 	@Override
 	public List<SubjectModel> findByDeparment_id(Long deparmentid) {
 		// TODO Auto-generated method stub
@@ -46,17 +47,18 @@ public class SubjectService implements ISubjectService{
 		return subjectRespones;
 	}
 
+
+
 	@Override
 	public Long insert(SubjectModel subjectModel) {
 		// TODO Auto-generated method stub
-		long id = subjectDAO.insert(subjectModel);
-		return id;
+		 subjectDAO.insert(subjectModel);
+		return null;
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		subjectDAO.delete(id);
+		 subjectDAO.delete(id);
 	}
 
 	@Override

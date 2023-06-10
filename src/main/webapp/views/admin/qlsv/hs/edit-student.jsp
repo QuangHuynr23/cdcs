@@ -68,7 +68,7 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
-					<ul class="nav nav-tabs mb-4" id="input" role="tablist">
+					<ul class="nav nav-tabs mb-4"  role="tablist">
 						<li class="nav-item" role="presentation">
 							<button class="nav-link active" id="student-tab"
 								data-bs-toggle="tab" data-bs-target="#student" type="button"
@@ -121,17 +121,17 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-6 d-flex justify-content-center">
-										<div class="form-group">
-											<a href="#" class=""> <input type="file" accept="image/*"
-												id="upload" class="d-none"> <label for="thumb"
-												class="remove"> <i
-													class="fa-5x fa-solid fa-circle-plus border border-primary p-4"></i>
-											</label>
-												<div id="image_show"></div> <input type="hidden" value="">
-											</a>
-										</div>
-									</div>
+<%--									<div class="col-sm-6 d-flex justify-content-center">--%>
+<%--										<div class="form-group">--%>
+<%--											<a href="#" class=""> <input type="file" accept="image/*"--%>
+<%--												id="upload" class="d-none"> <label for=""--%>
+<%--												class="remove"> <i--%>
+<%--													class="fa-5x fa-solid fa-circle-plus border border-primary p-4"></i>--%>
+<%--											</label>--%>
+<%--												<div id="image_show"></div> <input type="hidden" value="">--%>
+<%--											</a>--%>
+<%--										</div>--%>
+<%--									</div>--%>
 								</div>
 								<div class="row g-4">
 									<div class="col-sm-6">
@@ -151,7 +151,7 @@
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" type="radio" name="gender"
-													id="gender" value="0" /> <label class="form-check-label"
+													 value="0" /> <label class="form-check-label"
 													for="gender"> Nữ </label>
 											</div>
 										</div>
@@ -383,7 +383,7 @@
 								</div>
 							</div>
 							<div class="form-group mb-3">
-								<label for="address_infor">Thông tin nơi ở</label>
+								<label for="address">Thông tin nơi ở</label>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
 										name="address_infor" id="address_infor_in" value="1"
@@ -393,7 +393,7 @@
 								</div>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="address_infor" id="address_infor_out" value="0"
+										name="address_infor"  value="0"
 										form="form-input" /> <label class="form-check-label"
 										for="gender"> Ngoại trú </label>
 									<div class="form-group mb-3">

@@ -73,35 +73,34 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-3">
                             <label for="department_id" class="form-label">Khoa</label>
-                            <select class="form-select" id="department_id" name="department_id"  >
+                            <select class="form-select"  name="department_id"  >
                                 <option value="0"  id="department_id" name ="department_id" selected="selected">Chọn</option>
                                 <c:forEach var="item" items="${modeldepartment.listResult}">
                                 	<option value="${item.id}" id="department_id" name ="department_id" selected="selected">${item.name}</option>
                                 </c:forEach>
-                                <!-- <option value="1" id="department_id" name ="department_id" selected="selected">An toàn thông tin</option>
-                                <option value="2" id="department_id" name ="department_id" selected="selected">Điện tử viễn thông</option>
-                                <option value="3" id="department_id" name ="department_id" selected="selected">Công nghệ thông tin</option> -->
+
                             </select>
                         </div>
                     </div>
-                     <!-- <div class="col-sm-4">
+                    <div class="col-sm-4">
                         <div class="form-group mb-3">
-                            <label for="semester" class="form-label">Kỳ học</label>
-                            <select class="form-select" id="semester" form="form-input" name="semester">
+                            <label for="semester" class="form-label" >Kỳ học</label>
+                            <select class="form-select" id="semester" name ="semester" selected="selected">
                                 <option value="0">Chọn</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </select>
                         </div>
-                    </div>   -->
+                    </div>
                 </div>
 
                 <button type="submit" value="add-subject" id="action" name="action" class="btn btn-primary">
                     Thêm Học Phần
                 </button>
-                <!-- <button type="submit" value="login" id= "action" name= "action" class="btn btn-primary py-3 w-100 mb-4">Đăng Nhập</button> -->
+            </div>
+        </div>
     </form>
-</div>
+
 <!-- Footer Start -->
 <div class="container-fluid pt-4 px-4 ">
     <div class="bg-light rounded-top p-4">

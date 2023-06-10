@@ -33,12 +33,12 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
-					<ul class="nav nav-tabs mb-4" id="input" role="tablist">
+					<ul class="nav nav-tabs mb-4"  role="tablist">
 						<li class="nav-item" role="presentation">
 							<button class="nav-link active" id="student-tab"
 								data-bs-toggle="tab" data-bs-target="#student" type="button"
 								role="tab" aria-controls="student" aria-selected="true">
-								Học Viên</button>
+								Sinh Viên</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="household-tab" data-bs-toggle="tab"
@@ -58,12 +58,6 @@
 								aria-controls="contact" aria-selected="false">Liên Lạc
 							</button>
 						</li>
-						<!-- <li class="nav-item" role="presentation">
-							<button class="nav-link" id="info-tab" data-bs-toggle="tab"
-								data-bs-target="#info" type="button" role="tab"
-								aria-controls="info" aria-selected="false">Thông Tin
-								Quân Nhân</button>
-						</li> -->
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="orther-tab" data-bs-toggle="tab"
 								data-bs-target="#orther" type="button" role="tab"
@@ -79,14 +73,14 @@
 									<div class="col-sm-6 mb-3">
 										<div class="row g-4 mb-3">
 											<div class="form-group mb-3">
-												<label for="f-name" class="form-label">Họ đệm</label> <input
+												<label for="f-name" class="form-label">Họ và tên</label> <input
 													type="text" class="form-control" id="f-name" name="f-name"
 													autocomplete="off" />
 											</div>
 										</div>
 										<div class="row g-4">
 											<div class="form-group mb-3">
-												<label for="l-name" class="form-label">Tên</label> <input
+												<label for="l-name" class="form-label">Lớp</label> <input
 													type="text" class="form-control" id="l-name" name="l-name"
 													autocomplete="off" />
 											</div>
@@ -122,7 +116,7 @@
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" type="radio" name="gender"
-													id="gender" value="0" /> <label class="form-check-label"
+													 value="0" /> <label class="form-check-label"
 													for="gender"> Nữ </label>
 											</div>
 										</div>
@@ -354,7 +348,7 @@
 								</div>
 							</div>
 							<div class="form-group mb-3">
-								<label for="address_infor">Thông tin nơi ở</label>
+								<label for="address">Thông tin nơi ở</label>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
 										name="address_infor" id="address_infor_in" value="1"
@@ -364,7 +358,7 @@
 								</div>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="address_infor" id="address_infor_out" value="0"
+										name="address_infor"  value="0"
 										form="form-input" /> <label class="form-check-label"
 										for="gender"> Ngoại trú </label>
 									<div class="form-group mb-3">

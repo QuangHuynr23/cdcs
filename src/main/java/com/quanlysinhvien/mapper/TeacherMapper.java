@@ -12,9 +12,11 @@ public class TeacherMapper implements RowMapper<TeacherModel>{
 		try {
 			TeacherModel teacher = new TeacherModel();
 			teacher.setId(rs.getLong("id"));
+			teacher.setLname(rs.getString("lname"));
+			teacher.setFname(rs.getString("fname"));
 			teacher.setCode(rs.getString("code"));
 			teacher.setImage(rs.getString("image"));
-			teacher.setDepartment(rs.getString("department"));
+			teacher.setDepartment_id(rs.getLong("department_id"));
 			teacher.setGender(rs.getString("gender"));
 			teacher.setPhone(rs.getString("phone"));
 			teacher.setDob(rs.getString("dob"));

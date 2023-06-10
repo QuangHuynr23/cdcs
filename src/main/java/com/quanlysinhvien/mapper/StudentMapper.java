@@ -35,7 +35,7 @@ public class StudentMapper implements RowMapper<StudentModel> {
 			student.setWish(rs.getString("wish"));
 			student.setGraduation_year(rs.getString("graduation_year"));
 			student.setFamily(rs.getString("family"));
-			student.setTraining_object(rs.getString("traning_object"));
+			student.setTraining_object(rs.getString("training_object"));
 			student.setAffiliates(rs.getString("affiliates"));
 			student.setPersonal_phone(rs.getString("personal_phone"));
 			student.setFamily_phone(rs.getString("family_phone"));
@@ -52,6 +52,8 @@ public class StudentMapper implements RowMapper<StudentModel> {
 			student.setDiscipline(rs.getString("discipline"));
 			student.setCreatedat(rs.getTimestamp("createdat"));
 			student.setUpdatedat(rs.getTimestamp("updatedat"));
+			student.setPosition(rs.getString("position"));
+			student.setBirthday(rs.getString("birthday"));
 			return student;
 		} catch (SQLException e) {
 			return null;

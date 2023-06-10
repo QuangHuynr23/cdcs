@@ -1,6 +1,8 @@
 com\quanlysinhvien\controller\admin\qldt\tkb\LapLich_LtkbController.class
 com\quanlysinhvien\controller\dangnhap\LoginController.class
 com\quanlysinhvien\controller\admin\qlhv\hs\Hoso_Add_studentController.class
+com\quanlysinhvien\service\impl\TeacherService.class
+com\quanlysinhvien\controller\admin\qlhv\hs\Hoso_Edit_studentController.class
 com\quanlysinhvien\model\TeacherModel.class
 com\quanlysinhvien\service\impl\RoleService.class
 com\quanlysinhvien\model\DepartmentModel.class
@@ -42,6 +44,7 @@ com\quanlysinhvien\dao\impl\TeacherDAO.class
 com\quanlysinhvien\model\UserModel.class
 com\quanlysinhvien\dao\impl\SemesterDAO.class
 com\quanlysinhvien\dao\impl\KmaclassDAO.class
+com\quanlysinhvien\model\respone\TeacherRespone.class
 com\quanlysinhvien\model\SubjectModel.class
 com\quanlysinhvien\controller\trangchu\HomeController.class
 com\quanlysinhvien\service\impl\SemesterService.class
@@ -56,6 +59,7 @@ com\quanlysinhvien\dao\IStudentDAO.class
 com\quanlysinhvien\dao\IUserDAO.class
 com\quanlysinhvien\dao\impl\DepartmentDAO.class
 com\quanlysinhvien\service\IDepartmentService.class
+com\quanlysinhvien\api\TeacherAPI.class
 com\quanlysinhvien\model\ClassroomModel.class
 com\quanlysinhvien\controller\admin\qldt\qlgv\Qlgv_List_TeacherController.class
 com\quanlysinhvien\controller\admin\qldt\qlmh\Qlmh_Add_SubjectController.class
@@ -88,6 +92,7 @@ com\quanlysinhvien\constant\SystemConstant.class
 com\quanlysinhvien\dao\ISemesterDAO.class
 com\quanlysinhvien\mapper\ClassroomMapper.class
 com\quanlysinhvien\dao\impl\ClassroomDAO.class
+com\quanlysinhvien\api\StudentAPI.class
 com\quanlysinhvien\controller\admin\qlhv\hs\Qlhv_HosoController.class
 com\quanlysinhvien\controller\admin\HomeController.class
 com\quanlysinhvien\controller\admin\qldt\qlgv\Qlgv_Edit_TeacherController.class

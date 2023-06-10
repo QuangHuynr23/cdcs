@@ -37,7 +37,8 @@
 				<div class="bg-light rounded h-50 p-4">
 					<form action="<c:url value="/admin/qldt/qlmh/list-subject"/>"
 						method="post" id="form">
-						<div class="row g-4">
+
+						<div class="row g-4" style="margin-right: 300px">
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
 									<label for="department" class="form-label">Khoa</label> <select
@@ -49,10 +50,24 @@
 									</select>
 								</div>
 							</div>
+
+							<div class="col-sm-4">
+								<div class="form-group mb-3">
+									<label for="semester" class="form-label">Kỳ học</label> <select
+										class="form-select" id="semester" name="semester">
+										<option value="0">Chọn</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+									</select>
+								</div>
+							</div>
 						</div>
 
-						<button type="submit" form="form" class="btn btn-primary">Tra
-							cứu</button>
+
+
+
+						<button style="margin-bottom: 20px;" type="submit" form="form"
+							class="btn btn-primary">Tra cứu</button>
 
 					</form>
 					<div
@@ -88,9 +103,9 @@
 										<td><a class="btn btn-primary btn-sm"
 											href="<c:url value='/admin/qldt/qlmh/edit-subject'/>"> <i
 												class="bi bi-pencil-square"></i>
-										</a> <a href="#" class="btn btn-danger btn-sm"
-										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
-											class="bi bi-trash-fill"></i>
+										</a> <a class="btn btn-danger btn-sm" data-id="${item.id}"
+											onclick="removeRowDELETE(this)"> <i
+												class="bi bi-trash-fill"></i>
 										</a></td>
 									</tr>
 								</c:forEach>
@@ -121,7 +136,29 @@
 		</div>
 		<!-- Content End -->
 	</div>
- 	
+<script>
+function removeRowDELETE(element) {
+	const id = element.getAttribute('data-id');
+    const jsonData = { id: id};
+    if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
+        $.ajax({
+            type: 'DELETE',
+            url:'<c:url value="/api-subject"/>',
+            data: JSON.stringify(jsonData),
+            contentType: 'application/json;charset=UTF-8',
+            success: function (result) {
+                if (result.error === false) {
+                    alert(result.message);
+                    location.reload();
+                } else {
+                	location.reload();
+                    /* alert('Đã có lỗi xảy ra. Vui lòng thử lại'); */
+                }
+            },
+        });
+    }
+}
+</script>
 </body>
 
 </html>

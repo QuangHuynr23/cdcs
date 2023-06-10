@@ -38,7 +38,7 @@
 						<h3>Đăng Nhập</h3>
 						<form action="<c:url value='/dang-nhap'/>" id ="login" method="post">
 							<div class="form-floating mb-3">
-								<input type="email" class="form-control" id="email" name="email"
+								<input type="email" class="form-control"  name="email"
 									placeholder="name@example.com"> <label for="email" id="email">Email</label>
 							</div>
 							<div class="form-floating mb-4">

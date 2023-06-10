@@ -1,5 +1,21 @@
 package com.quanlysinhvien.dao;
 
-public interface ITeacherDAO {
+import com.quanlysinhvien.dao.impl.TeacherDAO;
+import com.quanlysinhvien.model.TeacherModel;
 
+import java.util.List;
+
+public interface ITeacherDAO extends IAbstractDAO<TeacherModel>
+{
+    @Override
+    List<TeacherModel> findAll();
+
+    @Override
+    void delete(Long id);
+
+    @Override
+    void update(TeacherModel teacherModel);
+
+    @Override
+    Long insert(TeacherModel teacherModel);
 }

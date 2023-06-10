@@ -17,7 +17,7 @@ public class HttpUtil {
 		this.value = value;
 	}
 
-	public <T> T toModel(Class<T> tClass) {
+	public <T> T toModel(Class<T> tClass) {//chuyen tu string map vo model
 		try {
 			return new ObjectMapper().readValue(value, tClass);
 		} catch (Exception e) {
@@ -33,7 +33,7 @@ public class HttpUtil {
 		try {
 			String line ;
 			while ((line = reader.readLine()) != null) {
-				sb.append(line);
+				sb.append(line);//Đọc dòng và cong chuoi
 			}
 		} catch (IOException e) {
 			// TODO: handle exception

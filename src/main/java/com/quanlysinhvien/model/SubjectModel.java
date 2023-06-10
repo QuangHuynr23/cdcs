@@ -22,4 +22,5 @@ public class SubjectModel extends AbstractModel<SubjectModel>{
 	private Integer exercise; //Bài tập
 	private Long department_id;	//id Khoa
 	private Integer course_load; // Tín chỉ
+	private Integer semester;
 }

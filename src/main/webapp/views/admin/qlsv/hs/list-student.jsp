@@ -3,6 +3,7 @@
 <%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="utf-8" />
 <title>Danh Sách Sinh Viên - Quản Lý Sinh Viên Mật Mã</title>
@@ -33,6 +34,9 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded p-4">
+<%--					<form action="<c:url value="/admin/qlhv/hs/list-student"/>"--%>
+<%--						  method="post" id="form">--%>
+<%--					</form>--%>
 					<div
 						class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
 						<table class="table table-hover table-striped mb-0">
@@ -46,30 +50,19 @@
 								</tr>
 							</thead>
 							<tbody>
+							 	<c:forEach var="item" items="${modelstudent.listResult}">
 								<tr>
-									<th scope="row">1</th>
-									<td>Nguyễn Quang Huy</td>
-									<td>AT170228</td>
-									<td>AT17B</td>
-									<td><a class="btn btn-primary btn-sm"
-										href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
+									<th scope="row">${item.id}</th>
+									<td>${item.name}</td>
+									<td>${item.code}</td>
+									<td>${item.lop}</td>
+									<td><a class="btn btn-primary btn-sm" href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
 									</a> <a href="#" class="btn btn-danger btn-sm"
 										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
 											class="bi bi-trash-fill"></i>
 									</a></td>
 								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Nguyễn Thế Long</td>
-									<td>AT170233</td>
-									<td>AT17B</td>
-									<td><a class="btn btn-primary btn-sm"
-										href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
-									</a> <a href="#" class="btn btn-danger btn-sm"
-										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
-											class="bi bi-trash-fill"></i>
-									</a></td>
-								</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -101,4 +94,5 @@
 	</div>
 
 </body>
+
 </html>

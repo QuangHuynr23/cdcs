@@ -44,20 +44,23 @@
                                 <th scope="col">Họ và Tên</th>
                                 <th scope="col">Mã Giảng Viên</th>
                                 <th scope="col">Khoa</th>
+                                <th scope="col">Giới Tính</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">&nbsp;</th>
+                                <th scope="col">Thao Tác</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                        <c:forEach var="item" items="${modelteacher.listResult}">
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Thái Thị Thanh Vân</td>
-                                <td>GV_1</td>
-                                <td>Công nghệ thông tin</td>
-                                <td><a href="mailto:leducthuan255@gmail.com">leducthuan255@gmail.com</a></td>
+                                <th scope="row">${item.id}</th>
+                                <td>${item.fname} ${item.lname}</td>
+                                <td>${item.code}</td>
+
+                                <td>${item.department_name}</td>
+                                <td>${item.gender}</td>
+                                <td><a href="mailto:ttvancntt@gmail.com">${item.email}</a></td>
                                 <td>
-                                    <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qld/add-grade'/>">
+                                    <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qlgv/edit-teacher'/>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <a href="#" class="btn btn-danger btn-sm"
@@ -66,22 +69,7 @@
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Thái Thị Thanh Vân</td>
-                                <td>GV_1</td>
-                                <td>Công nghệ thông tin</td>
-                                <td><a href="mailto:leducthuan255@gmail.com">leducthuan255@gmail.com</a></td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qld/add-grade'/>">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-sm"
-                                        onclick="removeRow(2,  ' /admin/products/destroy')">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                        </c:forEach>
 
                         </tbody>
                     </table>

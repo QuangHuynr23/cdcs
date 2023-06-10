@@ -26,7 +26,7 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 
 	@Override
 	public Long insert(SubjectModel subjectModel) {
-		String sql = "INSERT INTO `chuyendecs`.`subjects` (`code`,`name`,`department_id`,`alls`,`theory`,`practice`,`exercise`,`createdat`,`updatedat`,`course_load`) VALUES(?,?,?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO `chuyendecs`.`subjects` (`code`,`name`,`department_id`,`alls`,`theory`,`practice`,`exercise`,`createdat`,`updatedat`,`course_load`,`semester`) VALUES(?,?,?,?,?,?,?,?,?,?,?);";
 		return insert(sql, subjectModel.getCode(),subjectModel.getName(),subjectModel.getDepartment_id()
 				,subjectModel.getAlls(),subjectModel.getTheory(),subjectModel.getPractice(),subjectModel.getExercise(),subjectModel.getCreatedat(),subjectModel.getUpdatedat(),subjectModel.getCourse_load()) 	;
 	}
@@ -41,9 +41,9 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 
 	@Override
 	public void update(SubjectModel subjectModel) {
-		String sql ="UPDATE `chuyendecs`.`subjects` SET `id` = ?, `code` = ?,`name` = ?,`department_id` = ?,`alls` = ?,`theory` = ?,`practice` = ?,`exercise` = ?,`createdat` = ?,`updatedat` = ?,`course_load` = ? WHERE `id` = ? ;";
-		update(sql, subjectModel.getId(), subjectModel.getCode(),subjectModel.getName(),subjectModel.getDepartment_id()
-				,subjectModel.getAlls(),subjectModel.getTheory(),subjectModel.getPractice(),subjectModel.getExercise(),subjectModel.getCreatedat(),subjectModel.getUpdatedat(),subjectModel.getCourse_load());
+		String sql ="UPDATE `chuyendecs`.`subjects` SET `code` = ?,`name` = ?,`department_id` = ?,`alls` = ?,`theory` = ?,`practice` = ?,`exercise` = ?,`createdat` = ?,`updatedat` = ?,`course_load` = ?, `semester` = ? WHERE `id` = ? ;";
+		update(sql, subjectModel.getCode(),subjectModel.getName(),subjectModel.getDepartment_id()
+				,subjectModel.getAlls(),subjectModel.getTheory(),subjectModel.getPractice(),subjectModel.getExercise(),subjectModel.getCreatedat(),subjectModel.getUpdatedat(),subjectModel.getCourse_load(),subjectModel.getSemester(),subjectModel.getId());
 	}
 
 	@Override

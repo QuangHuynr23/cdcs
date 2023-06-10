@@ -1,7 +1,13 @@
 package com.quanlysinhvien.controller.admin.qldt.qlmh;
 
+import com.quanlysinhvien.constant.SystemConstant;
+import com.quanlysinhvien.model.respone.SubjectRespone;
+import com.quanlysinhvien.service.ISubjectService;
+import com.quanlysinhvien.util.FormUtil;
+
 import java.io.IOException;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,14 +17,18 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/admin/qldt/qlmh/edit-subject"})
 public class Qlmh_Edit_SubjectController extends HttpServlet{
-
+ 	@Inject
+	private ISubjectService subjectService;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
-    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/edit-subject.jsp");
+		SubjectRespone subjectRespone = FormUtil.toModel(SubjectRespone.class, req);
+		subjectRespone.setListResult(subjectService.findAll());
+		req.setAttribute(SystemConstant.MODEL+"subject",subjectRespone );
+		RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/edit-subject.jsp");
 		rd.forward(req, resp);
     }
 

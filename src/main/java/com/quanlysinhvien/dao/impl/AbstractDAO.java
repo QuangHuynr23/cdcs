@@ -14,8 +14,9 @@ import java.util.ResourceBundle;
 
 import com.quanlysinhvien.dao.GenericDAO;
 import com.quanlysinhvien.mapper.RowMapper;
+import com.quanlysinhvien.model.SubjectModel;
 
-public class AbstractDAO<T> implements GenericDAO<T>{
+public abstract class AbstractDAO<T> implements GenericDAO<T>{
 	
 	//ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 	public Connection getConnection() {
@@ -181,6 +182,7 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 		}
 		return null;
 	}
+
 
 //	@Override
 //	public int count(String sql, Object... parameters) {

@@ -23,6 +23,7 @@ public class SubjectMapper implements RowMapper<SubjectModel>{
 			subject.setCreatedat(rs.getTimestamp("createdat"));
 			subject.setUpdatedat(rs.getTimestamp("updatedat"));
 			subject.setCourse_load(rs.getInt("course_load"));
+			subject.setSemester(rs.getInt("semester"));
 			return subject;
 		} catch (SQLException e) {
 			return null;

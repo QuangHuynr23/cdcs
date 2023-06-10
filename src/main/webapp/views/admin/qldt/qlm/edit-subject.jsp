@@ -40,31 +40,31 @@
 								<div class="form-group mb-3">
 									<label for="name" class="form-label">Tên học phần</label> <input
 										type="text" class="form-control" id="name" name="name"
-										autocomplete="off" />
+										autocomplete="off" value="${modelsubject.name}" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
 									<label for="subject_code" class="form-label">Mã học
 										phần</label> <input type="text" class="form-control" id="subject_code"
-										name="subject_code" autocomplete="off" />
+										name="subject_code" autocomplete="off" value="${modelsubject.code}" />
 								</div>
 							</div>
 						</div>
 						<div class="row g-4">
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
-									<label for="number_of_lesson" class="form-label">Số tín
+									<label for="course_load" class="form-label">Số tín
 										chỉ</label> <input type="number" class="form-control"
-										id="number_of_lesson" name="number_of_lesson"
-										autocomplete="off" />
+										id="course_load" name="course_load"
+										autocomplete="off" value="${modelsubject.course_load}"/>
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
 									<label for="department_id" class="form-label">Khoa</label> <select
-										class="form-select" id="department_id" form="form-input"
-										name="department_id">
+										class="form-select" id="department_id"
+										name="department_id" value="${modelsubject.department_name}" selected="selected">
 										<option value="0">Chọn</option>
 										<option value="AT">An toàn thông tin</option>
 										<option value="DT">Điện tử viễn thông</option>
@@ -75,8 +75,8 @@
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
 									<label for="semester" class="form-label">Kỳ học</label> <select
-										class="form-select" id="semester" form="form-input"
-										name="semester">
+										class="form-select" id="semester"
+										name="semester" value="${modelsubject.semester}" selected="selected" >
 										<option value="0">Chọn</option>
 										<option value="1">1</option>
 										<option value="2">2</option>

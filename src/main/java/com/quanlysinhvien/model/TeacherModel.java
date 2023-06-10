@@ -14,9 +14,10 @@ import lombok.Setter;
 
 public class TeacherModel extends AbstractModel<TeacherModel>{
 	private String code;
-	private String name;
+	private String lname;
+	private String fname;
 	private String image;
-	private String department;
+	private Long department_id;
 	private String gender;
 	private String phone;
 	private String dob;
