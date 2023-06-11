@@ -32,6 +32,7 @@
 					</div>
 				</div>
 			</div>
+			<form action="<c:url value='/admin/qldt/qlmh/add-subject'/>" id="edit-subject" method="post">
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
 					<form action="" id="form">
@@ -45,11 +46,23 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
-									<label for="subject_code" class="form-label">Mã học
-										phần</label> <input type="text" class="form-control" id="subject_code"
-										name="subject_code" autocomplete="off" value="${modelsubject.code}" />
+									<label for="code" class="form-label">Mã học
+										phần</label> <input type="text" class="form-control" id="code"
+										name="code" autocomplete="off" value="${modelsubject.code}" />
 								</div>
 							</div>
+							<div class="col"><label class="form-label" for="alls">Tổng số tiết</label><input
+									placeholder="Nhập Tổng số tiết" name="alls" type="number" id="alls" class="form-control" value="${modelsubject.alls}">
+							</div>
+							<div class="col"><label class="form-label" for="theory">Số tiết lý thuyết</label><input
+									placeholder="Nhập Số tiết lý thuyết" name="theory" type="number" id="theory"
+									class="form-control" value="${modelsubject.theory}"></div>
+							<div class="col"><label class="form-label" for="practice">Số tiết thực hành</label><input
+									placeholder="Nhập Số tiết thực hành" name="practice" type="number" id="practice"
+									class="form-control" value="${modelsubject.practice}"></div>
+							<div class="col"><label class="form-label" for="exercise">Số tiết bài tập</label><input
+									placeholder="Nhập Số tiết bài tập" name="exercise" type="number" id="exercise"
+									class="form-control" value="${modelsubject.exercise}"></div>
 						</div>
 						<div class="row g-4">
 							<div class="col-sm-4">
@@ -76,7 +89,7 @@
 								<div class="form-group mb-3">
 									<label for="semester" class="form-label">Kỳ học</label> <select
 										class="form-select" id="semester"
-										name="semester" value="${modelsubject.semester}" selected="selected" >
+										name="semester" value="${modelsubject.semester}">
 										<option value="0">Chọn</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -85,10 +98,12 @@
 							</div>
 						</div>
 					</form>
-					<button type="submit" form="form" class="btn btn-primary">Chỉnh
+					<button type="submit" form="form" class="btn btn-primary" id="btnUpdate">Chỉnh
 						Sửa Học Phần</button>
 				</div>
+				 	<input type="hidden" value="${modelsubject.id}" id="id" name="id">
 			</div>
+			</form>
 			<!-- Footer Start -->
 			<div class="container-fluid pt-4 px-4 ">
 				<div class="bg-light rounded-top p-4">
@@ -109,9 +124,22 @@
 			</div>
 			<!-- Footer End -->
 		</div>
+
 		<!-- Content End -->
 	</div>
 
+<script>
+ 	$('#btnUpdate').click(function (e){
+ 	 	e.preventDefault();//Submid dung url minh can
+		var data ={};
+		var formData = $('#edit-subject').serializeArray();
+ 	 	$.each(formData, function (i, v){
+			  data[""+v.name+""] = v.value;
+		});
+
+
+	});
+</script>
 </body>
 
 </html>

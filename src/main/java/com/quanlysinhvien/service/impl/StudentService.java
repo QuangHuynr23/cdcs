@@ -33,4 +33,10 @@ public class StudentService implements IStudentService {
     public void update(StudentModel studentModel) {
 
     }
+
+	@Override
+	public StudentModel getOneById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

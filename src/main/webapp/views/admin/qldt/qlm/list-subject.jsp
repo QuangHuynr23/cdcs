@@ -101,7 +101,7 @@
 										<td>${item.practice}</td>
 										<td>${item.exercise}</td>
 										<td><a class="btn btn-primary btn-sm"
-											href="<c:url value='/admin/qldt/qlmh/edit-subject'/>"> <i
+											href="<c:url value='/admin/qldt/qlmh/edit-subject?${item.id}'/>"> <i
 												class="bi bi-pencil-square"></i>
 										</a> <a class="btn btn-danger btn-sm" data-id="${item.id}"
 											onclick="removeRowDELETE(this)"> <i
@@ -152,7 +152,6 @@ function removeRowDELETE(element) {
                     location.reload();
                 } else {
                 	location.reload();
-                    /* alert('Đã có lỗi xảy ra. Vui lòng thử lại'); */
                 }
             },
         });

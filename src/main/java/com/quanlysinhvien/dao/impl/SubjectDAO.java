@@ -24,6 +24,7 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 		return subjectModels.size() == 1 ? subjectModels : null;
 	}
 
+
 	@Override
 	public Long insert(SubjectModel subjectModel) {
 		String sql = "INSERT INTO `chuyendecs`.`subjects` (`code`,`name`,`department_id`,`alls`,`theory`,`practice`,`exercise`,`createdat`,`updatedat`,`course_load`,`semester`) VALUES(?,?,?,?,?,?,?,?,?,?,?);";

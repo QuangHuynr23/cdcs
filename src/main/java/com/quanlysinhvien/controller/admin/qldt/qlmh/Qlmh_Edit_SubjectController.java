@@ -25,6 +25,8 @@ public class Qlmh_Edit_SubjectController extends HttpServlet{
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
+		Long id = Long.parseLong(req.getParameter("id"));
+		req.setAttribute("subjectModel",subjectService.findById(id));
 		SubjectRespone subjectRespone = FormUtil.toModel(SubjectRespone.class, req);
 		subjectRespone.setListResult(subjectService.findAll());
 		req.setAttribute(SystemConstant.MODEL+"subject",subjectRespone );

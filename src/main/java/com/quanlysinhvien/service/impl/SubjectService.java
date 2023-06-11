@@ -20,7 +20,6 @@ public class SubjectService implements ISubjectService{
 	@Inject
 	private IDepartmentService departmentService;
 
-
 	@Override
 	public List<SubjectModel> findByDeparment_id(Long deparmentid) {
 		// TODO Auto-generated method stub
@@ -72,5 +71,8 @@ public class SubjectService implements ISubjectService{
 		// TODO Auto-generated method stub
 		return subjectDAO.findById(id);
 	}
-	
+
+
+
+
 }

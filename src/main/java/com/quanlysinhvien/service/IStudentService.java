@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IStudentService extends  IGenericService<StudentModel>{
     List<StudentModel> findAll();
+    StudentModel getOneById(Long id);
 
     @Override
     Long insert(StudentModel studentModel);

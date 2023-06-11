@@ -9,7 +9,6 @@ public interface ISubjectService extends IGenericService<SubjectModel>{
 	List<SubjectRespone> findAll();
 	List<SubjectModel> findByDeparment_id(Long deparmentid);
 	SubjectModel findById(Long id);
-
 	@Override
 	Long insert(SubjectModel subjectModel);
 
