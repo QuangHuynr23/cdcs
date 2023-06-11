@@ -20,15 +20,7 @@ public abstract class AbstractDAO<T> implements GenericDAO<T>{
 	
 	//ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 	public Connection getConnection() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String DB_URL = "jdbc:mysql://localhost:3306/chuyendecs";
-			String USER = "root";
-			String PASS = "123456";
-			return DriverManager.getConnection(DB_URL, USER, PASS);
-		} catch (ClassNotFoundException | SQLException e) {
-			return null;
-		}
+		return MySQLConnection.getMySQLConnection();
 	}
 
 	@Override

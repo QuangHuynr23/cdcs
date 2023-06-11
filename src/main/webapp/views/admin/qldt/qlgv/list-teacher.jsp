@@ -60,7 +60,7 @@
                                 <td>${item.gender}</td>
                                 <td><a href="mailto:ttvancntt@gmail.com">${item.email}</a></td>
                                 <td>
-                                    <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qlgv/edit-teacher'/>">
+                                    <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qlgv/edit-teacher?id=${item.id}'/>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <a href="#" class="btn btn-danger btn-sm"

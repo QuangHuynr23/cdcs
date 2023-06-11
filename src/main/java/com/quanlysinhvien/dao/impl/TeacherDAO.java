@@ -4,12 +4,42 @@ import com.quanlysinhvien.dao.ITeacherDAO;
 import com.quanlysinhvien.mapper.TeacherMapper;
 import com.quanlysinhvien.model.TeacherModel;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO {
+    private Connection connection = MySQLConnection.getMySQLConnection();
 
     @Override
     public TeacherModel findById(Long id) {
+        String sql ="SELECT * FROM teachers WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                TeacherModel teacher = new TeacherModel();
+                teacher.setId(rs.getLong("id"));
+                teacher.setLname(rs.getString("lname"));
+                teacher.setFname(rs.getString("fname"));
+                teacher.setCode(rs.getString("code"));
+                teacher.setImage(rs.getString("image"));
+                teacher.setDepartment_id(rs.getLong("department_id"));
+                teacher.setGender(rs.getString("gender"));
+                teacher.setPhone(rs.getString("phone"));
+                teacher.setDob(rs.getString("dob"));
+                teacher.setEmail(rs.getString("email"));
+                teacher.setCreatedat(rs.getTimestamp("createdat"));
+                teacher.setUpdatedat(rs.getTimestamp("updatedat"));
+                return teacher;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
         return null;
     }
 

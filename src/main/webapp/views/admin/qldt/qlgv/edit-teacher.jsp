@@ -37,33 +37,32 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
-					<form action="" id="form">
+					<form action="<c:url value='/admin/qldt/qlgv/edit-teacher'/>" id="edit-teacher" method="post"
+						  enctype="multipart/form-data">
+
+						<input type="hidden" name="id" value="${teacher.id}" />
+						<input type="hidden" name="image" value="${teacher.image}" />
 						<div class="row g-4 mb-3">
 							<div class="col-sm-6 mb-3">
 								<div class="row g-4 mb-3">
 									<div class="form-group mb-3">
 										<label for="f-name" class="form-label">Họ đệm</label> <input
-											type="text" class="form-control" id="f-name" name="f-name"
+											type="text" class="form-control" id="f-name" name="f-name" value="${teacher.fname}"
 											autocomplete="off" />
 									</div>
 								</div>
 								<div class="row g-4">
 									<div class="form-group mb-3">
 										<label for="l-name" class="form-label">Tên</label> <input
-											type="text" class="form-control" id="l-name" name="l-name"
+											type="text" class="form-control" id="l-name" name="l-name" value="${teacher.lname}"
 											autocomplete="off" />
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-6 d-flex justify-content-center">
 								<div class="form-group">
-									<a href="#" class=""> <input type="file" accept="image/*"
-										id="upload" class="d-none"> <label for="upload"
-										class="remove"> <i
-											class="fa-5x fa-solid fa-circle-plus border border-primary p-5"></i>
-									</label>
-										<div id="image_show"></div> <input type="hidden" value="">
-									</a>
+									<label class="required">Ảnh:&ensp;</label>
+									<input type="file" name="file">
 								</div>
 							</div>
 						</div>
@@ -71,23 +70,38 @@
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
 									<label for="code" class="form-label">Mã Giảng Viên</label> <input
-										type="text" class="form-control" id="code" name="code"
+										type="text" class="form-control" id="code" name="code" value="${teacher.code}"
 										autocomplete="off" />
 								</div>
 							</div>
 							<div class="col-sm-6 ">
 								<div class="form-group mb-3">
-									<label for="gender">Giới Tính</label>
-									<div class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="gender"
-											value="1" checked="" /> <label
-											class="form-check-label" for="gender"> Nam </label>
-									</div>
-									<div class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="gender"
-											id="gender" value="0" /> <label class="form-check-label"
-											for="gender"> Nữ </label>
-									</div>
+									<label>Giới Tính</label>
+									<c:choose>
+										<c:when test="${teacher.gender == '1' }">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="gender"
+													   value="1" checked="" /> <label
+													class="form-check-label"> Nam </label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="gender" value="0" /> <label class="form-check-label"> Nữ </label>
+											</div>
+										</c:when>
+
+										<c:when test="${teacher.gender == '2' }">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="gender"
+													   value="1" /> <label
+													class="form-check-label"> Nam </label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="gender" value="0" checked="" /> <label class="form-check-label"> Nữ </label>
+											</div>
+										</c:when>
+
+									</c:choose>
+
 								</div>
 							</div>
 						</div>
@@ -95,13 +109,20 @@
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
 									<label for="department" class="form-label">Khoa</label> <select
-										class="form-select" id="department">
-										<option value="0">Chọn</option>
-										<option value="CB">Khoa Cơ Bản</option>
-										<option value="AT">Khoa An Toàn Thông Tin</option>
-										<option value="CT">Khoa Công Nghệ Thông TIn</option>
-										<option value="DT">Khoa Điện Tử Viễn Thông</option>
-										<option value="MM">Khoa Mật Mã</option>
+										class="form-select" id="department" name="department_id">
+									<option value="0" id="department_id" name="department_id">Chọn
+									</option>
+									<c:forEach var="item" items="${departments}">
+										<c:choose>
+											<c:when test="${item.id == teacher.department_id}">
+												<option value="${item.id}" id="department_id" name="department_id"
+														selected="selected">${item.name}</option>
+											</c:when>
+											<c:otherwise>
+												<option value="${item.id}" id="department_id" name="department_id">${item.name}</option>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
 									</select>
 								</div>
 							</div>
@@ -109,29 +130,32 @@
 								<div class="form-group mb-3">
 									<label for="phone" class="form-label">Số Điện Thoại</label> <input
 										type="text" class="form-control" id="phone" name="phone"
-										autocomplete="off" />
+										autocomplete="off" value="${teacher.phone }"/>
 								</div>
 							</div>
 						</div>
 						<div class="row g-4">
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
+									<fmt:parseDate value="${teacher.dob}" pattern="yyyy-MM-dd" var="myDate"/>
+									<fmt:formatDate value="${myDate }" pattern="yyyy-MM-dd" var="strDate" />
 									<label for="date_of_birth" class="form-label">Ngày Sinh</label>
 									<input type="date" class="form-control" id="date_of_birth"
-										name="date_of_birth" autocomplete="off" />
+										name="dob" autocomplete="off" value="${strDate}"/>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
 									<label for="email" class="form-label">Email</label> <input
 										type="email" class="form-control" id="email" name="email"
-										autocomplete="off" />
+										autocomplete="off" value="${teacher.email }"/>
 								</div>
 							</div>
 						</div>
+						<button type="submit" id="action" name="action" class="btn btn-primary">
+							Sửa Giảng Viên
+						</button>
 					</form>
-					<button type="submit" class="btn btn-primary" form="form">Chỉnh
-						Sửa Thông Tin Giảng Viên</button>
 				</div>
 			</div>
 			<!-- Section End -->

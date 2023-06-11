@@ -33,7 +33,8 @@
                 </div>
             </div>
         </div>
-        <form action="<c:url value='/admin/qldt/qlgv/add-teacher'/>" id="add-teacher" method="post">
+        <form action="<c:url value='/admin/qldt/qlgv/add-teacher'/>" id="add-teacher" method="post"
+              enctype="multipart/form-data">
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded h-50 p-4">
                     <div class="row g-4 mb-3">
@@ -55,14 +56,8 @@
                         </div>
                         <div class="col-sm-6 d-flex justify-content-center">
                             <div class="form-group">
-                                <a href="#" class=""> <input type="file" accept="image/*"
-                                                             id="upload" class="d-none"> <label for="upload"
-                                                                                                class="remove"> <i
-                                        class="fa-5x fa-solid fa-circle-plus border border-primary p-5"></i>
-                                </label>
-                                    <div id="image_show"></div>
-                                    <input type="hidden" value="">
-                                </a>
+                                <label class="required">Ảnh:&ensp;</label>
+                                <input type="file" name="file">
                             </div>
                         </div>
                     </div>
@@ -97,12 +92,14 @@
                             <div class="form-group mb-3">
                                 <label for="department_id" class="form-label">Khoa</label>
                                 <select
-                                    class="form-select" name="department_id">
-                                <option value="0"  id="department_id" name ="department_id" selected="selected">Chọn</option>
+                                        class="form-select" name="department_id">
+                                    <option value="0" id="department_id" name="department_id" selected="selected">Chọn
+                                    </option>
                                     <c:forEach var="item" items="${modeldepartment.listResult}">
-                                        <option value="${item.id}" id="department_id" name ="department_id" selected="selected">${item.name}</option>
+                                        <option value="${item.id}" id="department_id" name="department_id"
+                                                selected="selected">${item.name}</option>
                                     </c:forEach>
-                            </select>
+                                </select>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -129,35 +126,35 @@
                             </div>
                         </div>
                     </div>
-        <button type="submit" value="add-subject" id="action" name="action" class="btn btn-primary">
-            Thêm Giảng Viên
-        </button>
-    </div>
-</div>
-</form>
-<!-- Section End -->
+                    <button type="submit" value="add-subject" id="action" name="action" class="btn btn-primary">
+                        Thêm Giảng Viên
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Section End -->
 
-<!-- Footer Start -->
-<div class="container-fluid pt-4 px-4 ">
-    <div class="bg-light rounded-top p-4">
-        <div class="row">
-            <div class="col-12 col-lg-4 text-center">
-                &copy; <a href="#">Site Name</a>, All Right Reserved.
-            </div>
-            <div class="col-12 col-lg-4 text-center">
-                Designed By Nguyễn Quang Huy <a href="#">Laravel Team</a>
-            </div>
-            <div class="col-12 col-lg-4 text-center">
-                <a href="#"> <i class="bi bi-github"></i>
-                </a> <a href="#"> <i class="bi bi-facebook"></i>
-            </a>
+        <!-- Footer Start -->
+        <div class="container-fluid pt-4 px-4 ">
+            <div class="bg-light rounded-top p-4">
+                <div class="row">
+                    <div class="col-12 col-lg-4 text-center">
+                        &copy; <a href="#">Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-12 col-lg-4 text-center">
+                        Designed By Nguyễn Quang Huy <a href="#">Laravel Team</a>
+                    </div>
+                    <div class="col-12 col-lg-4 text-center">
+                        <a href="#"> <i class="bi bi-github"></i>
+                        </a> <a href="#"> <i class="bi bi-facebook"></i>
+                    </a>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- Footer End -->
     </div>
-</div>
-<!-- Footer End -->
-</div>
-<!-- Content End -->
+    <!-- Content End -->
 </div>
 
 </body>
