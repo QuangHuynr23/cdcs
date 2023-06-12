@@ -53,12 +53,35 @@ public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO
 
     @Override
     public void delete(Long id) {
-
+        String query = "DELETE FROM teachers WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setLong(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void update(TeacherModel teacherModel) {
-
+        String sql = "UPDATE teachers SET code = ?, lname = ?, fname = ?, image = ?, department_id = ?, gender = ?, phone = ?, dob = ?, email = ? WHERE id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, teacherModel.getCode());
+            ps.setString(2, teacherModel.getLname());
+            ps.setString(3, teacherModel.getFname());
+            ps.setString(4, teacherModel.getImage());
+            ps.setLong(5, teacherModel.getDepartment_id());
+            ps.setString(6, teacherModel.getGender());
+            ps.setString(7, teacherModel.getPhone());
+            ps.setString(8, teacherModel.getDob());
+            ps.setString(9, teacherModel.getEmail());
+            ps.setLong(10, teacherModel.getId());
+            ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

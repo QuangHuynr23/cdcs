@@ -74,27 +74,22 @@
 										<div class="row g-4 mb-3">
 											<div class="form-group mb-3">
 												<label for="f-name" class="form-label">Họ và tên</label> <input
-													type="text" class="form-control" id="f-name" name="f-name"
+													type="text" class="form-control" id="f-name" name="name"
 													autocomplete="off" />
 											</div>
 										</div>
 										<div class="row g-4">
 											<div class="form-group mb-3">
 												<label for="l-name" class="form-label">Lớp</label> <input
-													type="text" class="form-control" id="l-name" name="l-name"
+													type="text" class="form-control" id="l-name" name="lop"
 													autocomplete="off" />
 											</div>
 										</div>
 									</div>
 									<div class="col-sm-6 d-flex justify-content-center">
 										<div class="form-group">
-											<a href="#" class=""> <input type="file" accept="image/*"
-												id="upload" class="d-none"> <label for="upload"
-												class="remove"> <i
-													class="fa-5x fa-solid fa-circle-plus border border-primary p-5"></i>
-											</label>
-												<div id="image_show"></div> <input type="hidden" value="">
-											</a>
+											<label class="required">Ảnh:&ensp;</label>
+											<input type="file" name="file">
 										</div>
 									</div>
 								</div>

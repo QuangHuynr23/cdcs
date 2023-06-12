@@ -47,14 +47,14 @@
 								<div class="row g-4 mb-3">
 									<div class="form-group mb-3">
 										<label for="f-name" class="form-label">Họ đệm</label> <input
-											type="text" class="form-control" id="f-name" name="f-name" value="${teacher.fname}"
+											type="text" class="form-control" id="f-name" name="fname" value="${teacher.fname}"
 											autocomplete="off" />
 									</div>
 								</div>
 								<div class="row g-4">
 									<div class="form-group mb-3">
 										<label for="l-name" class="form-label">Tên</label> <input
-											type="text" class="form-control" id="l-name" name="l-name" value="${teacher.lname}"
+											type="text" class="form-control" id="l-name" name="lname" value="${teacher.lname}"
 											autocomplete="off" />
 									</div>
 								</div>
@@ -85,7 +85,7 @@
 													class="form-check-label"> Nam </label>
 											</div>
 											<div class="form-check form-check-inline">
-												<input class="form-check-input" type="radio" name="gender" value="0" /> <label class="form-check-label"> Nữ </label>
+												<input class="form-check-input" type="radio" name="gender" value="2" /> <label class="form-check-label"> Nữ </label>
 											</div>
 										</c:when>
 
@@ -96,7 +96,7 @@
 													class="form-check-label"> Nam </label>
 											</div>
 											<div class="form-check form-check-inline">
-												<input class="form-check-input" type="radio" name="gender" value="0" checked="" /> <label class="form-check-label"> Nữ </label>
+												<input class="form-check-input" type="radio" name="gender" value="2" checked="" /> <label class="form-check-label"> Nữ </label>
 											</div>
 										</c:when>
 

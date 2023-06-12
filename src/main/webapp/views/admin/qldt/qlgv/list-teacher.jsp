@@ -63,8 +63,7 @@
                                     <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qlgv/edit-teacher?id=${item.id}'/>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <a href="#" class="btn btn-danger btn-sm"
-                                        onclick="removeRow(2,  ' /admin/products/destroy')">
+                                    <a href="<c:url value='/admin/qldt/qlgv/delete-teacher?id=${item.id}'/>" class="btn btn-danger btn-sm">
                                         <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </td>
