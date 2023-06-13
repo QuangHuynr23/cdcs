@@ -64,6 +64,8 @@
 								aria-controls="orther" aria-selected="false">Khác</button>
 						</li>
 					</ul>
+					<form action="<c:url value='/admin/qlhv/hs/add-student'/>" id="add-teacher" method="post"
+						  enctype="multipart/form-data">
 					<div class="tab-content" id="input">
 						<div class="tab-pane fade show active" id="student"
 							role="tabpanel" aria-labelledby="student-tab">
@@ -122,13 +124,13 @@
 										<div class="form-group mb-3">
 											<label for="bank_id" class="form-label">Số tài khoản</label>
 											<input type="text" class="form-control" id="bank_id"
-												name="bank_id" autocomplete="off" />
+												name="bank_number" autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group mb-3">
 											<label for="bank" class="form-label">Ngân hàng</label> <select
-												class="form-select" id="bank">
+												class="form-select" id="bank" name="bank">
 												<option value="0">Chọn</option>
 												<option value="A">Ngân hàng A</option>
 												<option value="B">Ngân hàng B</option>
@@ -143,7 +145,7 @@
 									<div class="col-sm-6">
 										<div class="form-group mb-3">
 											<label for="position" class="form-label">Chức vụ học
-												viên</label> <select class="form-select" id="position">
+												viên</label> <select class="form-select" id="position" name="position">
 												<option value="0">Chọn</option>
 												<option value="1">Chức vụ 1</option>
 												<option value="2">Chức vụ 2</option>
@@ -163,7 +165,7 @@
 										<div class="form-group mb-3">
 											<label for="identify_id" class="form-label">CCCD/CMND</label>
 											<input type="text" class="form-control" id="identify_id"
-												name="identify_id" autocomplete="off" />
+												name="identify_number" autocomplete="off" />
 										</div>
 									</div>
 									<div class="col-sm-4">
@@ -184,7 +186,7 @@
 								</div>
 								<div class="form-group mb-3">
 									<label for="birthday" class="form-label">Ngày sinh</label> <input
-										type="text" class="form-control" id="birthday" name="birthday"
+										type="text" class="form-control" id="birthday" name="dob"
 										autocomplete="off" />
 								</div>
 								<div class="form-group mb-3">
@@ -201,19 +203,19 @@
 							<div class="form-group mb-3">
 								<label for="address_province" class="form-label">Tỉnh/
 									Thành Phố</label> <input type="text" class="form-control"
-									id="address_province" name="address_province"
+									id="address_province" name="province"
 									autocomplete="off" form="form-input" />
 							</div>
 							<div class="form-group mb-3">
 								<label for="address_distric" class="form-label">Quận/
 									Huyện</label> <input type="text" class="form-control"
-									id="address_distric" name="address_distric" autocomplete="off"
+									id="address_distric" name="district" autocomplete="off"
 									form="form-input" />
 							</div>
 							<div class="form-group mb-3">
 								<label for="address_wards" class="form-label">Xã/ Phường</label>
 								<input type="text" class="form-control" id="address_wards"
-									name="address_wards" autocomplete="off" form="form-input" />
+									name="ward" autocomplete="off" form="form-input" />
 							</div>
 						</div>
 						<div class="tab-pane fade" id="object" role="tabpanel"
@@ -223,7 +225,7 @@
 								<div class="col-sm-6">
 									<div class="form-group mb-3">
 										<label for="ethnic" class="form-label">Dân tộc</label> <select
-											class="form-select" id="ethnic" form="form-input">
+											class="form-select" id="ethnic" form="form-input" name="ethnic">
 											<option value="0">Chọn</option>
 											<option value="1">Kinh</option>
 											<option value="2">Mường</option>
@@ -236,7 +238,7 @@
 								<div class="col-sm-6">
 									<div class="form-group mb-3">
 										<label for="religion" class="form-label">Tôn giáo</label> <select
-											class="form-select" id="religion" form="form-input">
+											class="form-select" id="religion" form="form-input" name="religion">
 											<option value="0">Chọn</option>
 											<option value="1">Không</option>
 											<option value="2">Phật giáo</option>
@@ -247,7 +249,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<label for="nation" class="form-label">Quốc tịch</label> <select
-									class="form-select" id="nation" form="form-input">
+									class="form-select" id="nation" form="form-input" name="nationality">
 									<option value="0">Chọn</option>
 									<option value="1">Việt Nam</option>
 									<option value="2">Lào</option>
@@ -267,7 +269,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<label for="family" class="form-label">Thành phần gia
-									đình</label> <select class="form-select" id="family" form="form-input">
+									đình</label> <select class="form-select" id="family" form="form-input" name="family">
 									<option value="0">Chọn</option>
 									<option value="1">Viên chức</option>
 									<option value="2">Nông dân</option>
@@ -279,7 +281,7 @@
 									<div class="form-group mb-3">
 										<label for="training_object" class="form-label">Đối
 											tượng đào tạo</label> <select class="form-select"
-											id="training_object" form="form-input">
+											id="training_object" form="form-input" name="training_object">
 											<option value="0">Chọn</option>
 											<option value="1">Đối tượng đào tạo 1</option>
 											<option value="2">Đối tượng đào tạo 2</option>
@@ -291,7 +293,7 @@
 									<div class="form-group mb-3">
 										<label for="affiliate" class="form-label">Đơn vị liên
 											kết</label> <select class="form-select" id="affiliate"
-											form="form-input">
+											form="form-input" name="affiliates">
 											<option value="0">Chọn</option>
 											<option value="1">Đơn vị liên kết 1</option>
 											<option value="2">Đơn vị liên kết 2</option>
@@ -307,7 +309,7 @@
 							<div class="form-group mb-3">
 								<label for="person_phone" class="form-label">Điện thoại</label>
 								<input type="text" class="form-control" id="person_phone"
-									name="person_phone" autocomplete="off" form="form-input" />
+									name="personal_phone" autocomplete="off" form="form-input" />
 							</div>
 							<div class="form-group mb-3">
 								<label for="family_phone" class="form-label">Điện thoại
@@ -330,7 +332,7 @@
 								<div class="col-sm-6">
 									<div class="form-group mb-3">
 										<label for="news_to" class="form-label">Báo tin cho</label> <input
-											type="text" class="form-control" id="news_to" name="news_to"
+											type="text" class="form-control" id="news_to" name="news_to_person"
 											autocomplete="off" form="form-input" />
 									</div>
 								</div>
@@ -346,20 +348,16 @@
 								<label for="address">Thông tin nơi ở</label>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="address_infor" id="address_infor_in" value="1"
+										name="address" id="address_infor_in" value="1"
 										checked="" form="form-input" /> <label
 										class="form-check-label" for="address_infor_in"> Nội
 										trú </label>
 								</div>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="address_infor"  value="0"
+										name="address"  value="0"
 										form="form-input" /> <label class="form-check-label"
 										for="gender"> Ngoại trú </label>
-									<div class="form-group mb-3">
-										<input type="text" class="form-control" id="address_infor_out"
-											name="address_infor_out" autocomplete="off" form="form-input" />
-									</div>
 								</div>
 							</div>
 						</div>
@@ -369,13 +367,13 @@
 							<div class="form-group mb-3">
 								<label for="join_date_union" class="form-label">Ngày vào
 									Đoàn</label> <input type="text" class="form-control"
-									id="join_date_union" name="join_date_union" autocomplete="off"
+									id="join_date_union" name="date_join_union" autocomplete="off"
 									form="form-input" />
 							</div>
 							<div class="form-group mb-3">
 								<label for="join_date_party" class="form-label">Ngày vào
 									Đảng</label> <input type="text" class="form-control"
-									id="join_date_party" name="join_date_party" autocomplete="off"
+									id="join_date_party" name="date_join_party" autocomplete="off"
 									form="form-input" />
 							</div>
 							<div class="form-group mb-3">
@@ -410,9 +408,10 @@
 									autocomplete="off" form="form-input" />
 							</div>
 						</div>
-						<button type="submit" class="btn btn-primary" form="form-input">Thêm
+						<button type="submit" class="btn btn-primary">Thêm
 							Sinh Viên</button>
 					</div>
+					</form>
 				</div>
 			</div>
 			<!-- Section End -->

@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO {
@@ -48,7 +49,44 @@ public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO
         String sql ="SELECT * FROM chuyendecs.teachers;";
         List<TeacherModel> teacherModels = query(sql, new TeacherMapper());
         return teacherModels;
+    }
 
+    @Override
+    public List<TeacherModel> search(Long department, String code) {
+        String sql ="SELECT * FROM teachers WHERE 1 = 1";
+        if(department!= null && department > 0){
+            sql += " AND department_id = "+ department;
+        }
+        if(code !=null && !code.isEmpty()){
+            sql += " AND code = '" + code+"'";
+        }
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+
+            List<TeacherModel>  teacherModels = new ArrayList<>();
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                TeacherModel teacher = new TeacherModel();
+                teacher.setId(rs.getLong("id"));
+                teacher.setLname(rs.getString("lname"));
+                teacher.setFname(rs.getString("fname"));
+                teacher.setCode(rs.getString("code"));
+                teacher.setImage(rs.getString("image"));
+                teacher.setDepartment_id(rs.getLong("department_id"));
+                teacher.setGender(rs.getString("gender"));
+                teacher.setPhone(rs.getString("phone"));
+                teacher.setDob(rs.getString("dob"));
+                teacher.setEmail(rs.getString("email"));
+                teacher.setCreatedat(rs.getTimestamp("createdat"));
+                teacher.setUpdatedat(rs.getTimestamp("updatedat"));
+                teacherModels.add(teacher);
+
+            }
+            return teacherModels;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

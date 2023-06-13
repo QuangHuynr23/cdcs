@@ -9,6 +9,7 @@ public interface ITeacherDAO extends IAbstractDAO<TeacherModel>
 {
     @Override
     List<TeacherModel> findAll();
+    List<TeacherModel> search(Long department, String code);
 
     @Override
     void delete(Long id);

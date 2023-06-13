@@ -8,6 +8,9 @@ import java.util.List;
 public interface ITeacherService extends  IGenericService<TeacherModel> {
     List<TeacherRespone> findAll();
 
+    List<TeacherRespone> search(Long department, String code);
+
+
     @Override
     Long insert(TeacherModel teacherModel);
 

@@ -35,6 +35,42 @@
             </div>
         </div>
         <div class="container-fluid pt-4 px-4">
+            <form action="<c:url value="/admin/qldt/qlgv/list-teacher"/>"
+                  method="get" id="form">
+
+                <div class="row g-4" style="margin-right: 300px">
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
+                            <label for="department_id" class="form-label">Khoa</label>
+                            <select
+                                    class="form-select" name="department_id">
+                                <option value="0" id="department_id" name="department_id" selected="selected">Chọn
+                                </option>
+                                <c:forEach var="item" items="${modeldepartment.listResult}">
+                                    <option value="${item.id}" id="department_id" name="department_id">${item.name}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Mã giảng viên</label> <input
+                                type="text" class="form-control" id="code" name="code"
+                                autocomplete="off"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <button style="margin-bottom: 20px;" type="submit"
+                        class="btn btn-primary">Tra cứu</button>
+
+                <a href="<c:url value="/admin/qldt/qlgv/export-teacher"/>" class="btn btn-success" style="margin-bottom: 20px;">Export</a>
+
+            </form>
             <div class="bg-light rounded p-4">
                 <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                     <table class="table table-hover table-striped mb-0">
