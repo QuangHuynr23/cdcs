@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.quanlysinhvien.dao.IUserDAO;
 import com.quanlysinhvien.mapper.UserMapper;
+import com.quanlysinhvien.model.TeacherModel;
 import com.quanlysinhvien.model.UserModel;
 
 public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO{
@@ -16,6 +17,12 @@ public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO{
 		sql.append(" WHERE email = ? AND password = ?");
         List<UserModel> users = query(sql.toString(), new UserMapper(), email, password);
 		return users.isEmpty() ? null : users.get(0);
+	}
+
+	public Long insert(UserModel userModel) {
+		String sql = "INSERT INTO `chuyendecs`.`users` ( `name`, `email`, `password`, `rolesid`) VALUES(?,?,?,?)";
+		return insert(sql, userModel.getName(), userModel.getEmail(), userModel.getPassword(),
+				userModel.getRolesid());
 	}
     
 }

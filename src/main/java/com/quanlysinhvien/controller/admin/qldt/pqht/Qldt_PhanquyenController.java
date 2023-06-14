@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/admin/qldt/pqht"})
+@WebServlet(urlPatterns = {"/admin-pq/qldt/pqht"})
 public class Qldt_PhanquyenController extends HttpServlet{
 
 	/**

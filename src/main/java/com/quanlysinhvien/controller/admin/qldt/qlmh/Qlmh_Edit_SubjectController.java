@@ -1,6 +1,9 @@
 package com.quanlysinhvien.controller.admin.qldt.qlmh;
 
 import com.quanlysinhvien.constant.SystemConstant;
+import com.quanlysinhvien.dao.impl.DepartmentDAO;
+import com.quanlysinhvien.model.SubjectModel;
+import com.quanlysinhvien.model.TeacherModel;
 import com.quanlysinhvien.model.respone.SubjectRespone;
 import com.quanlysinhvien.service.ISubjectService;
 import com.quanlysinhvien.util.FormUtil;
@@ -19,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Qlmh_Edit_SubjectController extends HttpServlet{
  	@Inject
 	private ISubjectService subjectService;
+	private DepartmentDAO departmentDAO = new DepartmentDAO();
 	/**
 	 * 
 	 */
@@ -26,16 +30,17 @@ public class Qlmh_Edit_SubjectController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
 		Long id = Long.parseLong(req.getParameter("id"));
-		req.setAttribute("subjectModel",subjectService.findById(id));
-		SubjectRespone subjectRespone = FormUtil.toModel(SubjectRespone.class, req);
-		subjectRespone.setListResult(subjectService.findAll());
-		req.setAttribute(SystemConstant.MODEL+"subject",subjectRespone );
+		req.setAttribute("subject",subjectService.findById(id));
+		req.setAttribute("departments", departmentDAO.findAll());
 		RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/edit-subject.jsp");
 		rd.forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	// TODO Auto-generated method stub
+		req.setCharacterEncoding("UTF-8");
+		SubjectModel subjectModel = FormUtil.toModel(SubjectModel.class, req);
+		subjectService.update(subjectModel);
+		resp.sendRedirect(req.getContextPath() + "/admin/qldt/qlmh/list-subject");
     }
     
 }

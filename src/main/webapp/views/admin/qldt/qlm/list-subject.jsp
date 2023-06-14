@@ -36,38 +36,28 @@
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
 					<form action="<c:url value="/admin/qldt/qlmh/list-subject"/>"
-						method="post" id="form">
+						method="get" id="form">
 
 						<div class="row g-4" style="margin-right: 300px">
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
-									<label for="department" class="form-label">Khoa</label> <select
-										class="form-select" id="department" name="department">
-										<option value="0">Chọn</option>
-										<option value="AT">An toàn thông tin</option>
-										<option value="CT">Công nghệ thông tin</option>
-										<option value="DT">Điện tử viễn thông</option>
-									</select>
-								</div>
-							</div>
-
-							<div class="col-sm-4">
-								<div class="form-group mb-3">
-									<label for="semester" class="form-label">Kỳ học</label> <select
-										class="form-select" id="semester" name="semester">
-										<option value="0">Chọn</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
+									<label for="department_id" class="form-label">Khoa</label>
+									<select
+											class="form-select" name="department_id">
+										<option value="0" id="department_id" name="department_id" selected="selected">Chọn
+										</option>
+										<c:forEach var="item" items="${modeldepartment.listResult}">
+											<option value="${item.id}" id="department_id" name="department_id">${item.name}</option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>
 						</div>
 
-
-
-
-						<button style="margin-bottom: 20px;" type="submit" form="form"
+						<button style="margin-bottom: 20px;" type="submit"
 							class="btn btn-primary">Tra cứu</button>
+
+						<a href="<c:url value="/admin/qldt/qlmh/export-subject"/>" class="btn btn-success" style="margin-bottom: 20px;">Export</a>
 
 					</form>
 					<div
@@ -101,10 +91,9 @@
 										<td>${item.practice}</td>
 										<td>${item.exercise}</td>
 										<td><a class="btn btn-primary btn-sm"
-											href="<c:url value='/admin/qldt/qlmh/edit-subject?${item.id}'/>"> <i
+											href="<c:url value='/admin/qldt/qlmh/edit-subject?id=${item.id}'/>"> <i
 												class="bi bi-pencil-square"></i>
-										</a> <a class="btn btn-danger btn-sm" data-id="${item.id}"
-											onclick="removeRowDELETE(this)"> <i
+										</a> <a class="btn btn-danger btn-sm" href="<c:url value='/admin/qldt/qlmh/delete-subject?id=${item.id}' />"> <i
 												class="bi bi-trash-fill"></i>
 										</a></td>
 									</tr>
@@ -136,28 +125,6 @@
 		</div>
 		<!-- Content End -->
 	</div>
-<script>
-function removeRowDELETE(element) {
-	const id = element.getAttribute('data-id');
-    const jsonData = { id: id};
-    if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
-        $.ajax({
-            type: 'DELETE',
-            url:'<c:url value="/api-subject"/>',
-            data: JSON.stringify(jsonData),
-            contentType: 'application/json;charset=UTF-8',
-            success: function (result) {
-                if (result.error === false) {
-                    alert(result.message);
-                    location.reload();
-                } else {
-                	location.reload();
-                }
-            },
-        });
-    }
-}
-</script>
 </body>
 
 </html>

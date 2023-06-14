@@ -32,7 +32,8 @@
 					</div>
 				</div>
 			</div>
-			<form action="<c:url value='/admin/qldt/qlmh/add-subject'/>" id="edit-subject" method="post">
+			<form action="<c:url value='/admin/qldt/qlmh/edit-subject'/>" id="edit-subject" method="post">
+				<input type="hidden" name="id" value="${subject.id}" />
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
 					<form action="" id="form">
@@ -41,28 +42,28 @@
 								<div class="form-group mb-3">
 									<label for="name" class="form-label">Tên học phần</label> <input
 										type="text" class="form-control" id="name" name="name"
-										autocomplete="off" value="${modelsubject.name}" />
+										autocomplete="off" value="${subject.name}" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group mb-3">
 									<label for="code" class="form-label">Mã học
 										phần</label> <input type="text" class="form-control" id="code"
-										name="code" autocomplete="off" value="${modelsubject.code}" />
+										name="code" autocomplete="off" value="${subject.code}" />
 								</div>
 							</div>
 							<div class="col"><label class="form-label" for="alls">Tổng số tiết</label><input
-									placeholder="Nhập Tổng số tiết" name="alls" type="number" id="alls" class="form-control" value="${modelsubject.alls}">
+									placeholder="Nhập Tổng số tiết" name="alls" type="number" id="alls" class="form-control" value="${subject.alls}">
 							</div>
 							<div class="col"><label class="form-label" for="theory">Số tiết lý thuyết</label><input
 									placeholder="Nhập Số tiết lý thuyết" name="theory" type="number" id="theory"
-									class="form-control" value="${modelsubject.theory}"></div>
+									class="form-control" value="${subject.theory}"></div>
 							<div class="col"><label class="form-label" for="practice">Số tiết thực hành</label><input
 									placeholder="Nhập Số tiết thực hành" name="practice" type="number" id="practice"
-									class="form-control" value="${modelsubject.practice}"></div>
+									class="form-control" value="${subject.practice}"></div>
 							<div class="col"><label class="form-label" for="exercise">Số tiết bài tập</label><input
 									placeholder="Nhập Số tiết bài tập" name="exercise" type="number" id="exercise"
-									class="form-control" value="${modelsubject.exercise}"></div>
+									class="form-control" value="${subject.exercise}"></div>
 						</div>
 						<div class="row g-4">
 							<div class="col-sm-4">
@@ -70,38 +71,32 @@
 									<label for="course_load" class="form-label">Số tín
 										chỉ</label> <input type="number" class="form-control"
 										id="course_load" name="course_load"
-										autocomplete="off" value="${modelsubject.course_load}"/>
+										autocomplete="off" value="${subject.course_load}"/>
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="form-group mb-3">
 									<label for="department_id" class="form-label">Khoa</label> <select
-										class="form-select" id="department_id"
-										name="department_id" value="${modelsubject.department_name}" selected="selected">
-										<option value="0">Chọn</option>
-										<option value="AT">An toàn thông tin</option>
-										<option value="DT">Điện tử viễn thông</option>
-										<option value="CT">Công nghệ thông tin</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group mb-3">
-									<label for="semester" class="form-label">Kỳ học</label> <select
-										class="form-select" id="semester"
-										name="semester" value="${modelsubject.semester}">
-										<option value="0">Chọn</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
+										class="form-select" name="department_id">
+										<<c:forEach var="item" items="${departments}">
+									<c:choose>
+										<c:when test="${item.id == subject.department_id}">
+											<option value="${item.id}" id="department_id" name="department_id"
+													selected="selected">${item.name}</option>
+										</c:when>
+										<c:otherwise>
+											<option value="${item.id}" id="department_id" name="department_id">${item.name}</option>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
 									</select>
 								</div>
 							</div>
 						</div>
 					</form>
-					<button type="submit" form="form" class="btn btn-primary" id="btnUpdate">Chỉnh
+					<button type="submit" class="btn btn-primary" id="btnUpdate">Chỉnh
 						Sửa Học Phần</button>
 				</div>
-				 	<input type="hidden" value="${modelsubject.id}" id="id" name="id">
 			</div>
 			</form>
 			<!-- Footer Start -->

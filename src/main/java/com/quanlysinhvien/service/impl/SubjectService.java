@@ -46,6 +46,24 @@ public class SubjectService implements ISubjectService{
 		return subjectRespones;
 	}
 
+	@Override
+	public List<SubjectRespone> search(Long department) {
+		List<SubjectRespone> subjectRespones = new ArrayList<>();
+		List<SubjectModel> subjectModels = subjectDAO.search(department);
+		for (SubjectModel subjectModel : subjectModels) {
+			SubjectRespone subjectRespone = new SubjectRespone();
+			try {
+				BeanUtils.copyProperties(subjectRespone, subjectModel);
+			} catch (IllegalAccessException | InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Lỗi ở SubjectService");
+				e.printStackTrace();
+			}
+			subjectRespone.setDepartment_name(departmentService.findById(subjectModel.getDepartment_id()).getName());
+			subjectRespones.add(subjectRespone);
+		}
+		return subjectRespones;
+	}
 
 
 	@Override

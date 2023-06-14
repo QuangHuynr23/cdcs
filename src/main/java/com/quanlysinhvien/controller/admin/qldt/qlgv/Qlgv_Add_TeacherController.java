@@ -51,6 +51,12 @@ public class Qlgv_Add_TeacherController extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO Auto-generated method stub
+        if (req.getPart("file") == null || req.getPart("file").getSize() == 0) {
+            req.setAttribute("status", "faile");
+            RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlgv/add-teacher.jsp");
+            rd.forward(req, resp);
+            return;
+        }
         Part filePart = req.getPart("file");
         String fileName = LOCATION_RELATIVE_SAVE + filePart.getSubmittedFileName();
         for (Part part : req.getParts()) {
@@ -60,7 +66,10 @@ public class Qlgv_Add_TeacherController extends HttpServlet {
         TeacherModel teacherModel = FormUtil.toModel(TeacherModel.class, req);
         teacherModel.setImage(fileName);
         teacherService.insert(teacherModel);
-        resp.sendRedirect(req.getContextPath() + "/admin/qldt/qlgv/add-teacher");
+
+        req.setAttribute("status", "success");
+        RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlgv/add-teacher.jsp");
+        rd.forward(req, resp);
     }
 
 }

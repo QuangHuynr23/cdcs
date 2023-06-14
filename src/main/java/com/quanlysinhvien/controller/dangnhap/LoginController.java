@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("/views/login.jsp");
 			rd.forward(req, resp);
 		} else if (action != null && action.equals("logout")) {
-			SessionUtil.getInstance().removeValue(req, "USERMODEL");
+			req.getSession().removeAttribute("USERMODEL");
 			resp.sendRedirect(req.getContextPath() + "/trangchu");
 		}
 	}
@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 		userModel = userService.findByUserEmailAndPassword(userModel.getEmail(), userModel.getPassword());
 		if (userModel != null) {
 			// Lưu account đăng nhập lên sesion
-			SessionUtil.getInstance().putValue(req, "USERMODEL", userModel);
+			req.getSession().setAttribute("USERMODEL", userModel);
 			// Lưu user và password lên cookie
 			Cookie email = new Cookie("email", userModel.getEmail());
 			Cookie pass = new Cookie("password", userModel.getPassword());
@@ -63,8 +63,11 @@ public class LoginController extends HttpServlet {
 			}
 			resp.addCookie(email);
 			resp.addCookie(pass);
-			if (roleService.findByRoleId(userModel.getRolesid()).getRole_name().equals(SystemConstant.ADMIN)) {
+			if (roleService.findByRoleId(userModel.getRolesid()).getRole_name().equals(SystemConstant.DAO_TAO)) {
 				resp.sendRedirect(req.getContextPath() + "/admin");
+			}
+			else if(roleService.findByRoleId(userModel.getRolesid()).getRole_name().equals(SystemConstant.ADMIN)){
+				resp.sendRedirect(req.getContextPath() + "/admin-pq/qldt/pqht");
 			}
 		} else {
 			resp.sendRedirect(req.getContextPath() + "/dang-nhap?action=login");

@@ -36,13 +36,13 @@
         <div class="container-fluid pt-4 px-4">
             <div class="bg-light rounded h-50 p-4">
                 <div class="row mb-5">
-                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-sm-4 col-xs-4">
                         <a href="<c:url value='/admin/qldt/tkb/ltkb'/>" type="button" class="btn btn-block btn-primary btn-lg"
-                            style="width: 70%; height: 70px">Lập danh sách môn cho kì học</a>
+                            style="width: 70%; height: 70px">Thêm thời khoá biểu</a>
                     </div>
-                    <div class="col-lg-6 col-sm-6 col-xs-6">
-                        <a href="<c:url value='/admin/qldt/tkb/lllcl'/>" type="button" class="btn btn-block btn-primary btn-lg"
-                            style="width: 70%; height: 70px">Lập lịch học cho lớp</a>
+                    <div class="col-lg-4 col-sm-4 col-xs-4">
+                        <a href="<c:url value='/admin/qldt/tkb/dstkb'/>" type="button" class="btn btn-block btn-primary btn-lg"
+                            style="width: 70%; height: 70px">Danh sách thời khóa biểu</a>
                     </div>
                 </div>
 

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.quanlysinhvien.constant.SystemConstant;
+import com.quanlysinhvien.model.DepartmentModel;
 import com.quanlysinhvien.model.SubjectModel;
 import com.quanlysinhvien.model.respone.SubjectRespone;
 import com.quanlysinhvien.service.IDepartmentService;
@@ -31,27 +32,15 @@ public class Qlmh_List_SubjectController extends HttpServlet{
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	// TODO Auto-generated method stub
-		SubjectRespone subjectRespone = FormUtil.toModel(SubjectRespone.class, req);
-		subjectRespone.setListResult(subjectService.findAll());
-		req.setAttribute(SystemConstant.MODEL+"subject",subjectRespone );
-    	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/list-subject.jsp");
-		rd.forward(req, resp);
-    }
-	
+		DepartmentModel departmentModel = new DepartmentModel();
+		departmentModel.setListResult(departmentService.findAll());
+		req.setAttribute(SystemConstant.MODEL + "department", departmentModel);
+		Long department = req.getParameter("department_id") == null ? null : Long.parseLong(req.getParameter("department_id"));
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	String department = req.getParameter("department");
-    	//List<SubjectModel> listSubject = subjectService.findAll();
-    	long deparmentid = -1;
-//    	for (SubjectModel subjectModel : listSubject) {
-//			if (subjectModel.getCode().equals(department)) {
-//				deparmentid = subjectModel.getId();
-//			}
-//		}
-    	List<SubjectModel> list = subjectService.findByDeparment_id(deparmentid);
-    	
-    	req.setAttribute("listSubject", list);
-//    	req.setAttribute("departmentList", departmentService.);
+
+		SubjectRespone subjectRespone = FormUtil.toModel(SubjectRespone.class, req);
+		subjectRespone.setListResult(subjectService.search(department));
+		req.setAttribute(SystemConstant.MODEL+"subject",subjectRespone );
     	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/list-subject.jsp");
 		rd.forward(req, resp);
     }

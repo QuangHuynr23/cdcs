@@ -50,7 +50,7 @@
               <a href="qldt/qltn/index.html" class="dropdown-item">
                 <i class="fa-solid fa-list"></i>&nbsp;Xét duyệt tốt nghiệp
               </a>
-              <a href="<c:url value='/admin/qldt/pqht'/>" class="dropdown-item">
+              <a href="<c:url value='/admin-pq/qldt/pqht'/>" class="dropdown-item">
                 <i class="fa-solid fa-list"></i>&nbsp;Khác
               </a>
             </div>

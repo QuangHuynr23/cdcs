@@ -33,6 +33,20 @@
                 </div>
             </div>
         </div>
+        <c:choose>
+            <c:when test="${status=='success'}">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> Bạn đã thêm thành công!
+                </div>
+            </c:when>
+            <c:when test="${status=='faile'}">
+                <div class="alert alert-danger">
+                    <strong>Faile!</strong> Bạn đã thêm thất bại!
+
+                </div>
+            </c:when>
+        </c:choose>
+
         <form action="<c:url value='/admin/qldt/qlgv/add-teacher'/>" id="add-teacher" method="post"
               enctype="multipart/form-data">
             <div class="container-fluid pt-4 px-4">

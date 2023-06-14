@@ -82,16 +82,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="form-group mb-3">
-                            <label for="semester" class="form-label" >Kỳ học</label>
-                            <select class="form-select" id="semester" name ="semester" selected="selected">
-                                <option value="0">Chọn</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 <button type="submit" value="add-subject" id="action" name="action" class="btn btn-primary">
