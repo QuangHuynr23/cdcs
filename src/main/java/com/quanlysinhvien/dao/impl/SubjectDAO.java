@@ -54,7 +54,7 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 
 	@Override
 	public List<SubjectModel> search(Long department) {
-		String sql = "SELECT * FROM subjects WHERE 1=1" ;
+		String sql = "SELECT * FROM chuyendecs.subjects WHERE 1=1" ;
 		if(department!= null && department > 0){
 			sql += " AND department_id = "+ department;
 		}
@@ -64,32 +64,9 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 
 	@Override
 	public SubjectModel findById(Long id) {
-		String query = "SELECT * FROM subjects WHERE id = ?";
-		try {
-			PreparedStatement ps = connection.prepareStatement(query);
-			ps.setLong(1, id);
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				SubjectModel subject = new SubjectModel();
-				subject.setId(rs.getLong("id"));
-				subject.setCode(rs.getString("code"));
-				subject.setName(rs.getString("name"));
-				subject.setAlls(rs.getInt("alls"));
-				subject.setTheory(rs.getInt("theory"));
-				subject.setPractice(rs.getInt("practice"));
-				subject.setExercise(rs.getInt("exercise"));
-				subject.setDepartment_id(rs.getLong("department_id"));
-				subject.setCreatedat(rs.getTimestamp("createdat"));
-				subject.setUpdatedat(rs.getTimestamp("updatedat"));
-				subject.setCourse_load(rs.getInt("course_load"));
-				subject.setSemester(rs.getInt("semester"));
-				return subject;
-			}
-			return null;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
+		String sql = "SELECT * FROM chuyendecs.subjects WHERE id = ?";
+		List<SubjectModel> subjectModels = query(sql, new SubjectMapper(), id);
+		return subjectModels.isEmpty() ? null : subjectModels.get(0);
 	}
 
 

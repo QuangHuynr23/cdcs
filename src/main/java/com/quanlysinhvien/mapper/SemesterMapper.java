@@ -1,22 +1,20 @@
 package com.quanlysinhvien.mapper;
 
+import com.quanlysinhvien.model.Semester;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.quanlysinhvien.model.SemesterModel;
-
-public class SemesterMapper implements RowMapper<SemesterModel>{
+public class SemesterMapper implements RowMapper<Semester>{
 
 	@Override
-	public SemesterModel mapRow(ResultSet rs) {		
+	public Semester mapRow(ResultSet rs) {
 		try {
-			SemesterModel semester = new SemesterModel();
+			Semester semester = new Semester();
 			semester.setId(rs.getLong("id"));
 			semester.setName(rs.getString("name"));
-			semester.setCourse_id(rs.getString("course_id"));
-			semester.setSubject_id(rs.getString("subject_id"));
-			semester.setCreatedat(rs.getTimestamp("createdat"));
-			semester.setUpdatedat(rs.getTimestamp("updatedat"));
+			semester.setStartDate(rs.getString("start_at"));
+			semester.setEndDate(rs.getString("end_at"));
 			return semester;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

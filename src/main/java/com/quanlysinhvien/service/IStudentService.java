@@ -1,13 +1,13 @@
 package com.quanlysinhvien.service;
 
 import com.quanlysinhvien.model.StudentModel;
+import com.quanlysinhvien.model.respone.StudentResponse;
 
 import java.util.List;
 
 public interface IStudentService extends  IGenericService<StudentModel>{
-    List<StudentModel> findAll();
-    StudentModel getOneById(Long id);
-
+    List<StudentResponse> findAll();
+    List<StudentResponse> search(String code);
     @Override
     Long insert(StudentModel studentModel);
 

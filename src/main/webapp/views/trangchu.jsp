@@ -47,50 +47,29 @@
 					<td>quanghuynr23@gmail.com</td>
 					<td>123456</td>
 					<td>Admin</td>
-					<td>Tất cả</td>
+					<td>Phân Quyền</td>
 				</tr>
 				<tr>
 					<td>thelong@gmail.com</td>
 					<td>123456</td>
-					<td>Học viên</td>
-					<td>Xem điểm, thêm thông tin của chính mình</td>
+					<td>Đào Tạo</td>
+					<td>Quản Lý Đào Tạo</td>
 				</tr>
 				<tr class="row_table">
-					<td>vinh@gmail.com</td>
+					<td>ducvinh@gmail.com</td>
 					<td>123456</td>
-					<td>Giảng viên</td>
-					<td>Sửa thông tin của chính mình</td>
+					<td>Admin</td>
+					<td>Phân Quyền</td>
 				</tr>
 				<tr>
-					<td>trang@gmail.com</td>
-					<td>123456</td>
-					<td>Khảo thí</td>
-					<td>Thêm tất cả điểm</td>
-				</tr>
-				<tr class="row_table">
-					<td>quanghuy2@gmail.com</td>
-					<td>123456</td>
-					<td>Hệ QLSV</td>
-					<td>Thêm thông tin cho sinh viên</td>
-				</tr>
- 				<tr>
 					<td>quynhtrang@gmail.com</td>
 					<td>123456</td>
-					<td>Đào tạo</td>
-					<td>Lập lịch học<br> quản lý môn học
-					</td>
-				</tr> 
+					<td>Đào Tạo</td>
+					<td>Quản Lý Đào Tạo</td>
+				</tr>
 
 			</tbody>
 		</table>
-		<div>
-			<p class="last_text">
-				Khi tạo sinh viên hoặc giảng viên mới thì hệ thống sẽ tạo mới 1 tài
-				khoản trong hệ thống với <br>
-				<strong>Tên đăng nhập</strong> là <strong>Mã SV/GV</strong>, <strong>Mật
-					khẩu</strong> là <strong>123456789.</strong>
-			</p>
-		</div>
 
 	</div>
 </body>

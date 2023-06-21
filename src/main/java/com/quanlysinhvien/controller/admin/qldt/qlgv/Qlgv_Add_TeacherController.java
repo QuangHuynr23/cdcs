@@ -31,8 +31,8 @@ public class Qlgv_Add_TeacherController extends HttpServlet {
     @Inject
     private IDepartmentService departmentService;
 
-    private static final String LOCATION_RELATIVE_SAVE = "/template/upload/teacher/";
-    private static final String LOCATION_ROOT_SAVE = "/home/cuongpham/Desktop/ExternalProject/cdcs/src/main/webapp";
+    private static final String LOCATION_RELATIVE_SAVE = "\\template\\upload\\student\\";
+    private static final String LOCATION_ROOT_SAVE = "C:\\Users\\HUY\\Desktop\\cdcs\\src\\main\\webapp";
 
 
     /**
@@ -51,6 +51,7 @@ public class Qlgv_Add_TeacherController extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // TODO Auto-generated method stub
+        req.setCharacterEncoding("UTF-8");
         if (req.getPart("file") == null || req.getPart("file").getSize() == 0) {
             req.setAttribute("status", "faile");
             RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlgv/add-teacher.jsp");
@@ -62,10 +63,15 @@ public class Qlgv_Add_TeacherController extends HttpServlet {
         for (Part part : req.getParts()) {
             part.write(LOCATION_ROOT_SAVE + fileName);
         }
-        req.setCharacterEncoding("UTF-8");
         TeacherModel teacherModel = FormUtil.toModel(TeacherModel.class, req);
         teacherModel.setImage(fileName);
-        teacherService.insert(teacherModel);
+        Long status = teacherService.insert(teacherModel);
+        if(status == null){
+            req.setAttribute("status", "faile");
+            RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlgv/add-teacher.jsp");
+            rd.forward(req, resp);
+            return;
+        }
 
         req.setAttribute("status", "success");
         RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlgv/add-teacher.jsp");

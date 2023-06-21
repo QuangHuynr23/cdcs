@@ -1,7 +1,10 @@
 package com.quanlysinhvien.controller.admin.qlhv.hs;
 
 import com.quanlysinhvien.constant.SystemConstant;
+import com.quanlysinhvien.model.DepartmentModel;
 import com.quanlysinhvien.model.StudentModel;
+import com.quanlysinhvien.model.respone.StudentResponse;
+import com.quanlysinhvien.service.IDepartmentService;
 import com.quanlysinhvien.service.IStudentService;
 import com.quanlysinhvien.util.FormUtil;
 
@@ -17,7 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/admin/qlhv/hs/list-student"})
 public class Hoso_List_studentController extends HttpServlet{
-
+ 	@Inject
+	private IDepartmentService departmentService;
 	@Inject
 	private IStudentService studentService;
 	/**
@@ -25,10 +29,10 @@ public class Hoso_List_studentController extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	// TODO Auto-generated method stub
-		StudentModel studentModel = FormUtil.toModel(StudentModel.class,req);
-		studentModel.setListResult(studentService.findAll());
-		req.setAttribute(SystemConstant.MODEL+"student",studentModel);
+		String code = req.getParameter("code");
+		StudentResponse studentResponse = FormUtil.toModel(StudentResponse.class,req);
+		studentResponse.setListResult(studentService.search(code));
+		req.setAttribute(SystemConstant.MODEL+"student",studentResponse);
     	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qlsv/hs/list-student.jsp");
 		rd.forward(req, resp);
     }

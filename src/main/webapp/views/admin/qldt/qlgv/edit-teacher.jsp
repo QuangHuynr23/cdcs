@@ -153,7 +153,7 @@
 							</div>
 						</div>
 						<button type="submit" id="action" name="action" class="btn btn-primary">
-							Sửa Giảng Viên
+							Chỉnh Sửa Giảng Viên
 						</button>
 					</form>
 				</div>

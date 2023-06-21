@@ -27,20 +27,20 @@ public class ListScheduleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Schedule> schedules = scheduleDAO.findAll();
-        List<ScheduleResponse> scheduleResponseLíst = new ArrayList<>();
+        List<ScheduleResponse> scheduleResponseList = new ArrayList<>();
 
         for (Schedule schedule : schedules){
-            scheduleResponseLíst.add(new ScheduleResponse(
-                    courseDAO.findById(schedule.getCoursesId()).getName(),
-                    semesterDAO.findById(schedule.getSemesterId()).getName(),
-                    departmentDAO.findById(schedule.getDepartmentId()).getName(),
-                    teacherDAO.findById(schedule.getTeacherId()).getFname() + " " + teacherDAO.findById(schedule.getTeacherId()).getLname(),
-                    subjectDAO.findById(schedule.getSubjectId()).getName(),
+            scheduleResponseList.add(new ScheduleResponse(
+                    courseDAO.findById(schedule.getCoursesId()) == null ? null : courseDAO.findById(schedule.getCoursesId()).getName(),
+                    semesterDAO.findById(schedule.getSemesterId()) == null ? null : semesterDAO.findById(schedule.getSemesterId()).getName(),
+                    departmentDAO.findById(schedule.getDepartmentId()) == null ? null : departmentDAO.findById(schedule.getDepartmentId()).getName(),
+                    teacherDAO.findById(schedule.getTeacherId()) == null  ? null: teacherDAO.findById(schedule.getTeacherId()).getFname() + " " + teacherDAO.findById(schedule.getTeacherId()).getLname(),
+                    subjectDAO.findById(schedule.getSubjectId()) == null ? null : subjectDAO.findById(schedule.getSubjectId()).getName(),
                     schedule.getTotalClass()
             ));
         }
 
-        req.setAttribute("schedules", scheduleResponseLíst);
+        req.setAttribute("schedules", scheduleResponseList);
         RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/tkb/list-tkb.jsp");
         rd.forward(req, resp);
 

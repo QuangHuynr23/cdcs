@@ -34,9 +34,22 @@
 			</div>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded p-4">
-<%--					<form action="<c:url value="/admin/qlhv/hs/list-student"/>"--%>
-<%--						  method="post" id="form">--%>
-<%--					</form>--%>
+					<form action="<c:url value="/admin/qlhv/hs/list-student"/>"
+						  method="get" id="form">
+						<div class="row g-4" style="margin-right: 300px">
+							<div class="col-sm-4">
+								<div class="form-group mb-3">
+									<label class="form-label">Mã sinh viên</label> <input
+										type="text" class="form-control" id="code" name="code"
+										autocomplete="off"/>
+								</div>
+							</div>
+						</div>
+
+						<button style="margin-bottom: 20px;" type="submit"
+								class="btn btn-primary">Tra cứu</button>
+						<a href="<c:url value="/admin/qlhv/hs/export-student"/>" class="btn btn-success" style="margin-bottom: 20px;">Export</a>
+					</form>
 					<div
 						class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
 						<table class="table table-hover table-striped mb-0">
@@ -44,9 +57,10 @@
 								<tr>
 									<th scope="col">ID</th>
 									<th scope="col">Họ và Tên</th>
+									<th scope="col">Giới tính</th>
 									<th scope="col">Mã Sinh Viên</th>
 									<th scope="col">Lớp</th>
-									<th scope="col">&nbsp;</th>
+									<th scope="col">Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,11 +68,12 @@
 								<tr>
 									<th scope="row">${item.id}</th>
 									<td>${item.name}</td>
+									<td>${item.gender}</td>
 									<td>${item.code}</td>
 									<td>${item.lop}</td>
-									<td><a class="btn btn-primary btn-sm" href="<c:url value='/admin/qlhv/hs/edit-student'/>"> <i class="bi bi-pencil-square"></i>
-									</a> <a href="#" class="btn btn-danger btn-sm"
-										onclick="removeRow(2,  ' /admin/products/destroy')"> <i
+									<td><a class="btn btn-primary btn-sm" href="<c:url value='/admin/qlhv/hs/edit-student?id=${item.id}'/>"> <i class="bi bi-pencil-square"></i>
+									</a> <a href="<c:url value='/admin/qlhv/hs/delete-student?id=${item.id}'/>" class="btn btn-danger btn-sm"
+											data-id="${item.id}" onclick="deleteStudent(this)"> <i
 											class="bi bi-trash-fill"></i>
 									</a></td>
 								</tr>
@@ -92,7 +107,28 @@
 		<!-- Content End -->
 
 	</div>
+	<script>
+		function deleteStudent(element) {
+			const id = element.getAttribute('data-id');
+			const jsonData = { id: id};
+			if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
+				$.ajax({
+					type: 'GET',
+					url: '<c:url value="/admin/qlhv/hs/delete-student?"/>',
+					data: JSON.stringify(jsonData),
+					contentType: 'application/json;charset=UTF-8',
+					success: function (result) {
+						if (result.error === true) {
+							alert(result.message);
+							location.reload();
+						} else {
+							location.reload();
+						}
+					},
+				});
+			}
+		}
 
+	</script>
 </body>
-
 </html>

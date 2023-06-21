@@ -27,8 +27,8 @@ public class Qlgv_Edit_TeacherController extends HttpServlet{
 	private TeacherDAO teacherDAO;
 	private DepartmentDAO departmentDAO;
 
-	private static final String LOCATION_RELATIVE_SAVE = "/template/upload/teacher/";
-	private static final String LOCATION_ROOT_SAVE = "/home/cuongpham/Desktop/ExternalProject/cdcs/src/main/webapp";
+	private static final String LOCATION_RELATIVE_SAVE = "\\template\\upload\\student\\";
+	private static final String LOCATION_ROOT_SAVE = "C:\\Users\\HUY\\Desktop\\cdcs\\src\\main\\webapp";
 
 	@Override
 	public void init() throws ServletException {

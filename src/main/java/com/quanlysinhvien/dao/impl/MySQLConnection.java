@@ -9,7 +9,7 @@ public class MySQLConnection {
     private static final String hostName = "localhost";
     private static final String dbName = "chuyendecs";
     private static final String userName = "root";
-    private static final String password = "cuong123456";
+    private static final String password = "123456";
 
     public static Connection getMySQLConnection() {
         return getMySQLConnection(hostName, dbName, userName, password);
@@ -20,7 +20,7 @@ public class MySQLConnection {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + "?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&useSSL=false";
+            String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName + "?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8";
 
             Connection conn = DriverManager.getConnection(connectionURL, userName,
                     password);
@@ -37,3 +37,4 @@ public class MySQLConnection {
         System.out.println(getMySQLConnection());
     }
 }
+//&useSSL=false

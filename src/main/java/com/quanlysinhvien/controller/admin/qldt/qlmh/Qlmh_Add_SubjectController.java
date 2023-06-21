@@ -37,8 +37,17 @@ public class Qlmh_Add_SubjectController extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
     	SubjectModel subjectModel = FormUtil.toModel(SubjectModel.class, req);
-    	subjectService.insert(subjectModel);
-    	resp.sendRedirect(req.getContextPath() + "/admin/qldt/qlmh/add-subject");
+    	Long status = subjectService.insert(subjectModel);
+		if(status == null){
+			req.setAttribute("status", "faile");
+			RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/add-subject.jsp");
+			rd.forward(req, resp);
+			return;
+		}
+		req.setAttribute("status", "success");
+		RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/add-subject.jsp");
+		rd.forward(req, resp);
+    	resp.sendRedirect(req.getContextPath() + "admin/qldt/qlm/add-subject.jsp");
     }
     
 }

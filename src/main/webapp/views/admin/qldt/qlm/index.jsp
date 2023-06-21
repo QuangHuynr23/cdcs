@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Quản lý môn - Quản Lý Sinh Viên Mật Mã</title>
+    <title>Quản Lý Môn Học - Quản Lý Sinh Viên Mật Mã</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
 </head>
@@ -30,7 +30,7 @@
         <div class="container-fluid pt-4 px-4">
             <div class="bg-light rounded h-50 p-4">
                 <div class="row g-4">
-                    <h3>Quản lý môn</h3>
+                    <h3>Quản Lý Môn Học</h3>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title>Thêm Học Phần - Quản Lý Sinh Viên Mật Mã</title>
+    <title>Thêm Môn Học - Quản Lý Sinh Viên Mật Mã</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 </head>
 
@@ -28,10 +28,23 @@
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light rounded h-50 p-4">
             <div class="row g-4">
-                <h3>Thêm Học Phần</h3>
+                <h3>Thêm Môn Học</h3>
             </div>
         </div>
     </div>
+    <c:choose>
+        <c:when test="${status=='success'}">
+            <div class="alert alert-success">
+                <strong>Success!</strong> Bạn đã thêm thành công!
+            </div>
+        </c:when>
+        <c:when test="${status=='faile'}">
+            <div class="alert alert-danger">
+                <strong>Faile!</strong> Bạn đã thêm thất bại!
+
+            </div>
+        </c:when>
+    </c:choose>
     <form action="<c:url value='/admin/qldt/qlmh/add-subject'/>" id="add-subject" method="post">
         <div class="container-fluid pt-4 px-4">
             <div class="bg-light rounded h-50 p-4">
@@ -85,7 +98,7 @@
                 </div>
 
                 <button type="submit" value="add-subject" id="action" name="action" class="btn btn-primary">
-                    Thêm Học Phần
+                    Thêm Môn Học
                 </button>
             </div>
         </div>

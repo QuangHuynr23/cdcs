@@ -16,32 +16,9 @@ public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO
 
     @Override
     public TeacherModel findById(Long id) {
-        String sql ="SELECT * FROM teachers WHERE id = ?";
-        try {
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setLong(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                TeacherModel teacher = new TeacherModel();
-                teacher.setId(rs.getLong("id"));
-                teacher.setLname(rs.getString("lname"));
-                teacher.setFname(rs.getString("fname"));
-                teacher.setCode(rs.getString("code"));
-                teacher.setImage(rs.getString("image"));
-                teacher.setDepartment_id(rs.getLong("department_id"));
-                teacher.setGender(rs.getString("gender"));
-                teacher.setPhone(rs.getString("phone"));
-                teacher.setDob(rs.getString("dob"));
-                teacher.setEmail(rs.getString("email"));
-                teacher.setCreatedat(rs.getTimestamp("createdat"));
-                teacher.setUpdatedat(rs.getTimestamp("updatedat"));
-                return teacher;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return null;
+        String sql ="SELECT * FROM chuyendecs.teachers WHERE id = ?";
+        List<TeacherModel> teacherModels = query(sql, new TeacherMapper(), id);
+        return teacherModels.isEmpty() ? null : teacherModels.get(0);
     }
 
     @Override
@@ -53,40 +30,15 @@ public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO
 
     @Override
     public List<TeacherModel> search(Long department, String code) {
-        String sql ="SELECT * FROM teachers WHERE 1 = 1";
+        String sql ="SELECT * FROM chuyendecs.teachers WHERE 1 = 1";
         if(department!= null && department > 0){
             sql += " AND department_id = "+ department;
         }
         if(code !=null && !code.isEmpty()){
             sql += " AND code = '" + code+"'";
         }
-        try {
-            PreparedStatement ps = connection.prepareStatement(sql);
-
-            List<TeacherModel>  teacherModels = new ArrayList<>();
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                TeacherModel teacher = new TeacherModel();
-                teacher.setId(rs.getLong("id"));
-                teacher.setLname(rs.getString("lname"));
-                teacher.setFname(rs.getString("fname"));
-                teacher.setCode(rs.getString("code"));
-                teacher.setImage(rs.getString("image"));
-                teacher.setDepartment_id(rs.getLong("department_id"));
-                teacher.setGender(rs.getString("gender"));
-                teacher.setPhone(rs.getString("phone"));
-                teacher.setDob(rs.getString("dob"));
-                teacher.setEmail(rs.getString("email"));
-                teacher.setCreatedat(rs.getTimestamp("createdat"));
-                teacher.setUpdatedat(rs.getTimestamp("updatedat"));
-                teacherModels.add(teacher);
-
-            }
-            return teacherModels;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+        List<TeacherModel> teacherModels = query(sql, new TeacherMapper(), department, code);
+        return teacherModels;
     }
 
     @Override
@@ -103,23 +55,9 @@ public class TeacherDAO extends AbstractDAO<TeacherModel> implements ITeacherDAO
 
     @Override
     public void update(TeacherModel teacherModel) {
-        String sql = "UPDATE teachers SET code = ?, lname = ?, fname = ?, image = ?, department_id = ?, gender = ?, phone = ?, dob = ?, email = ? WHERE id = ?";
-        try {
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, teacherModel.getCode());
-            ps.setString(2, teacherModel.getLname());
-            ps.setString(3, teacherModel.getFname());
-            ps.setString(4, teacherModel.getImage());
-            ps.setLong(5, teacherModel.getDepartment_id());
-            ps.setString(6, teacherModel.getGender());
-            ps.setString(7, teacherModel.getPhone());
-            ps.setString(8, teacherModel.getDob());
-            ps.setString(9, teacherModel.getEmail());
-            ps.setLong(10, teacherModel.getId());
-            ps.executeUpdate();
-        }catch (SQLException e) {
-            e.printStackTrace();
-        }
+        String sql = "UPDATE chuyendecs.teachers SET code = ?, lname = ?, fname = ?, image = ?, department_id = ?, gender = ?, phone = ?, dob = ?, email = ? WHERE id = ?";
+        update(sql,teacherModel.getCode(),teacherModel.getLname(),teacherModel.getFname(),teacherModel.getImage(),teacherModel.getDepartment_id(),teacherModel.getGender(),teacherModel.getPhone()
+        ,teacherModel.getDob(),teacherModel.getEmail(), teacherModel.getId());
     }
 
     @Override

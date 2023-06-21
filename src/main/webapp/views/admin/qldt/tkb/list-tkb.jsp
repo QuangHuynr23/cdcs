@@ -41,8 +41,8 @@
                     <table class="table table-hover table-striped mb-0">
                         <thead>
                             <tr>
-                                <th scope="col">Kì học</th>
                                 <th scope="col">Khóa học</th>
+                                <th scope="col">Kì học</th>
                                 <th scope="col">Khoa</th>
                                 <th scope="col">Môn học</th>
                                 <th scope="col">Giảng viên</th>

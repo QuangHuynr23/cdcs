@@ -14,10 +14,9 @@ import lombok.Setter;
 public class StudentModel extends AbstractModel<StudentModel>{
 	private String code;
 	private String name;
-	private Boolean gender;
+	private String gender;
 	private String image;
 	private String lop;
-	private String position;
 	private String birthday;
 	private String bank_number;
 	private String bank;
@@ -27,28 +26,5 @@ public class StudentModel extends AbstractModel<StudentModel>{
 	private String identify_number;
 	private String identify_date;
 	private String identify_address;
-	private String province;
-	private String district;
-	private String ward;
-	private String nationality;
-	private String ethnic;
-	private String religion;
-	private String wish;
-	private String graduation_year;
-	private String family;
-	private String training_object;
-	private String affiliates;
-	private String personal_phone;
-	private String family_phone;
-	private String office_phone;
-	private String email;
-	private String news_to_person;
-	private String news_to_address;	
-	private String date_join_union;
-	private String date_join_party;
-	private String entry_date;
-	private String graduation_date;
-	private String job;
-	private String laudatory;
-	private String discipline;
+
 }

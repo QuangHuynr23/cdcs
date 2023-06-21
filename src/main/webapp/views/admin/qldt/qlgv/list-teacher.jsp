@@ -61,13 +61,8 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <button style="margin-bottom: 20px;" type="submit"
                         class="btn btn-primary">Tra cứu</button>
-
                 <a href="<c:url value="/admin/qldt/qlgv/export-teacher"/>" class="btn btn-success" style="margin-bottom: 20px;">Export</a>
 
             </form>
@@ -99,8 +94,8 @@
                                     <a class="btn btn-primary btn-sm" href="<c:url value='/admin/qldt/qlgv/edit-teacher?id=${item.id}'/>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <a href="<c:url value='/admin/qldt/qlgv/delete-teacher?id=${item.id}'/>" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash-fill"></i>
+                                    <a href="<c:url value='/admin/qldt/qlgv/delete-teacher?id=${item.id}'/>" class="btn btn-danger btn-sm"
+                                       data-id="${item.id}" onclick="deleteTeacher(this)"> <i class="bi bi-trash-fill"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -136,6 +131,28 @@
     <!-- Content End -->
 
     </div>
+<script>
+    function deleteTeacher(element) {
+        const id = element.getAttribute('data-id');
+        const jsonData = { id: id};
+        if (confirm('Xoá mà không thể khôi phục. Bạn có chắc chắn không ?')) {
+            $.ajax({
+                type: 'GET',
+                url: '<c:url value="/admin/qldt/qlgv/delete-teacher"/>',
+                data: JSON.stringify(jsonData),
+                contentType: 'application/json;charset=UTF-8',
+                success: function (result) {
+                    if (result.error === false) {
+                        alert(result.message);
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                },
+            });
+        }
+    }
 
+</script>
 </body>
 </html>

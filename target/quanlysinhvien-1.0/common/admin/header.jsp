@@ -11,9 +11,6 @@
             <a href="#" class="sidebar-toggler flex-shrink-0">
                 <i class="fa fa-bars"></i>
             </a>
-            <form class="d-none d-md-flex ms-4">
-                <input class="form-control border-0" type="search" placeholder="Search" />
-            </form>
             <div class="navbar-nav align-items-center ms-auto">
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -22,7 +19,6 @@
                         <span class="d-none d-lg-inline-flex">${USERMODEL.name}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">Settings</a>
                         <a href="<c:url value='/dang-xuat?action=logout'/>" class="dropdown-item">Đăng xuất</a>
                     </div>
                 </div>

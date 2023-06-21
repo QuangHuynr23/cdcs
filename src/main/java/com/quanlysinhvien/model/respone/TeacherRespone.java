@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 
-public class TeacherRespone extends AbstractModel<TeacherRespone> {
+public class  TeacherRespone extends AbstractModel<TeacherRespone> {
     private String code;
     private String fname;
     private String lname;

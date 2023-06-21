@@ -14,12 +14,18 @@
             </div>
           </div>
           <div class="ms-3">
-            <h6 class="mb-0">Nguyễn Quang Huy</h6>
-            <span>Admin</span>
+            <h6 class="mb-0">${USERMODEL.name}</h6>
+            <c:if test="${USERMODEL.rolesid == 1}">
+                <span>Admin</span>
+            </c:if>
+            <c:if test="${USERMODEL.rolesid == 2}">
+              <span>Đào Tạo</span>
+            </c:if>
+
           </div>
         </div>
         <div class="navbar-nav w-100">
-          <a href="../../index.html" class="nav-item nav-link">
+          <a href="<c:url value='/admin/pldt/trangchu'/>" class="nav-item nav-link">
             <i class="fa fa-tachometer-alt me-2"></i>Trang Chủ</a>
           <div class="nav-item dropdown">
             <a href="<c:url value='/admin/qlhv'/>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -28,7 +34,7 @@
               <a href="<c:url value='/admin/qlhv/hs'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Hồ sơ</a>
-              <a href="<c:url value='/admin/qlhv/bc'/>" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="fa-solid fa-calendar-days"></i>&nbsp;Báo cáo thống kê</a>
             </div>
           </div>
@@ -45,9 +51,9 @@
               <a href="<c:url value='/admin/qldt/tkb'/>" class="dropdown-item">
                 <i class="fa-solid fa-circle-plus"></i>
                 &nbsp;Lập lịch</a>
-              <a href="qldt/xlhv/index.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="fa-solid fa-calendar-days"></i>&nbsp;Xử lý học vụ</a>
-              <a href="qldt/qltn/index.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="fa-solid fa-list"></i>&nbsp;Xét duyệt tốt nghiệp
               </a>
               <a href="<c:url value='/admin-pq/qldt/pqht'/>" class="dropdown-item">

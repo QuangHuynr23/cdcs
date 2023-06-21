@@ -3,6 +3,7 @@ package com.quanlysinhvien.controller.admin.qldt.qlgv;
 import com.quanlysinhvien.dao.impl.DepartmentDAO;
 import com.quanlysinhvien.dao.impl.TeacherDAO;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,11 +13,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/admin/qldt/qlgv/delete-teacher"})
 public class DeleteTeacherController extends HttpServlet {
-    private TeacherDAO teacherDAO;
-    @Override
-    public void init() throws ServletException {
-        this.teacherDAO = new TeacherDAO();
-    }
+
+    @Inject
+    private  TeacherDAO teacherDAO;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -31,6 +31,19 @@
 					</div>
 				</div>
 			</div>
+			<c:choose>
+				<c:when test="${status=='success'}">
+					<div class="alert alert-success">
+						<strong>Success!</strong> Bạn đã thêm thành công!
+					</div>
+				</c:when>
+				<c:when test="${status=='faile'}">
+					<div class="alert alert-danger">
+						<strong>Faile!</strong> Bạn đã thêm thất bại!
+
+					</div>
+				</c:when>
+			</c:choose>
 			<div class="container-fluid pt-4 px-4">
 				<div class="bg-light rounded h-50 p-4">
 					<ul class="nav nav-tabs mb-4"  role="tablist">
@@ -40,50 +53,28 @@
 								role="tab" aria-controls="student" aria-selected="true">
 								Sinh Viên</button>
 						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="household-tab" data-bs-toggle="tab"
-								data-bs-target="#household" type="button" role="tab"
-								aria-controls="household" aria-selected="false">Hộ Khẩu
-							</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="object-tab" data-bs-toggle="tab"
-								data-bs-target="#object" type="button" role="tab"
-								aria-controls="object" aria-selected="false">Đối Tượng
-							</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-								data-bs-target="#contact" type="button" role="tab"
-								aria-controls="contact" aria-selected="false">Liên Lạc
-							</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="orther-tab" data-bs-toggle="tab"
-								data-bs-target="#orther" type="button" role="tab"
-								aria-controls="orther" aria-selected="false">Khác</button>
-						</li>
+
 					</ul>
-					<form action="<c:url value='/admin/qlhv/hs/add-student'/>" id="add-teacher" method="post"
+					<form action="<c:url value='/admin/qlhv/hs/add-student'/>" id="add-student" method="post"
 						  enctype="multipart/form-data">
 					<div class="tab-content" id="input">
 						<div class="tab-pane fade show active" id="student"
 							role="tabpanel" aria-labelledby="student-tab">
-							<h5 class="text-center mb-3">Học Viên</h5>
+							<h5 class="text-center mb-3">Sinh Viên</h5>
 							<form id="form-input">
 								<div class="row g-4 mb-3">
 									<div class="col-sm-6 mb-3">
 										<div class="row g-4 mb-3">
 											<div class="form-group mb-3">
-												<label for="f-name" class="form-label">Họ và tên</label> <input
-													type="text" class="form-control" id="f-name" name="name"
+												<label for="name" class="form-label">Họ và tên</label> <input
+													type="text" class="form-control" id="name" name="name"
 													autocomplete="off" />
 											</div>
 										</div>
 										<div class="row g-4">
 											<div class="form-group mb-3">
-												<label for="l-name" class="form-label">Lớp</label> <input
-													type="text" class="form-control" id="l-name" name="lop"
+												<label for="lop" class="form-label">Lớp</label> <input
+													type="text" class="form-control" id="lop" name="lop"
 													autocomplete="off" />
 											</div>
 										</div>
@@ -122,8 +113,8 @@
 								<div class="row g-4">
 									<div class="col-sm-6">
 										<div class="form-group mb-3">
-											<label for="bank_id" class="form-label">Số tài khoản</label>
-											<input type="text" class="form-control" id="bank_id"
+											<label for="bank_number" class="form-label">Số tài khoản</label>
+											<input type="text" class="form-control" id="bank_number"
 												name="bank_number" autocomplete="off" />
 										</div>
 									</div>
@@ -132,11 +123,11 @@
 											<label for="bank" class="form-label">Ngân hàng</label> <select
 												class="form-select" id="bank" name="bank">
 												<option value="0">Chọn</option>
-												<option value="A">Ngân hàng A</option>
-												<option value="B">Ngân hàng B</option>
-												<option value="C">Ngân hàng C</option>
-												<option value="D">Ngân hàng D</option>
-												<option value="E">Ngân hàng E</option>
+												<option value="A">Ngân hàng MB</option>
+												<option value="B">Ngân hàng BIDV</option>
+												<option value="C">Ngân hàng VIETCOMBANK</option>
+												<option value="D">Ngân hàng TECHCOMBANK</option>
+												<option value="E">Khác</option>
 											</select>
 										</div>
 									</div>
@@ -144,11 +135,13 @@
 								<div class="row g-4">
 									<div class="col-sm-6">
 										<div class="form-group mb-3">
-											<label for="position" class="form-label">Chức vụ học
-												viên</label> <select class="form-select" id="position" name="position">
+											<label for="dob" class="form-label">Chức vụ học
+												viên</label> <select class="form-select" id="dob" name="dob">
 												<option value="0">Chọn</option>
-												<option value="1">Chức vụ 1</option>
-												<option value="2">Chức vụ 2</option>
+												<option value="1">Lớp trưởng</option>
+												<option value="2">Lớp Phó</option>
+											 	<option value="3">Bí thư</option>
+											 	<option value="4">Không </option>
 											</select>
 										</div>
 									</div>
@@ -163,8 +156,8 @@
 								<div class="row g-4">
 									<div class="col-sm-4">
 										<div class="form-group mb-3">
-											<label for="identify_id" class="form-label">CCCD/CMND</label>
-											<input type="text" class="form-control" id="identify_id"
+											<label for="identify_number" class="form-label">CCCD/CMND</label>
+											<input type="text" class="form-control" id="identify_number"
 												name="identify_number" autocomplete="off" />
 										</div>
 									</div>
@@ -186,9 +179,10 @@
 								</div>
 								<div class="form-group mb-3">
 									<label for="birthday" class="form-label">Ngày sinh</label> <input
-										type="text" class="form-control" id="birthday" name="dob"
+										type="date" class="form-control" id="birthday" name="birthday"
 										autocomplete="off" />
 								</div>
+
 								<div class="form-group mb-3">
 									<label for="address" class="form-label">Địa chỉ</label> <input
 										type="text" class="form-control" id="address" name="address"
@@ -196,219 +190,8 @@
 								</div>
 							</form>
 						</div>
-						<div class="tab-pane fade" id="household" role="tabpanel"
-							aria-labelledby="household-tab">
-							<h5 class="text-center mb-3">Hộ Khẩu</h5>
 
-							<div class="form-group mb-3">
-								<label for="address_province" class="form-label">Tỉnh/
-									Thành Phố</label> <input type="text" class="form-control"
-									id="address_province" name="province"
-									autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="address_distric" class="form-label">Quận/
-									Huyện</label> <input type="text" class="form-control"
-									id="address_distric" name="district" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="address_wards" class="form-label">Xã/ Phường</label>
-								<input type="text" class="form-control" id="address_wards"
-									name="ward" autocomplete="off" form="form-input" />
-							</div>
-						</div>
-						<div class="tab-pane fade" id="object" role="tabpanel"
-							aria-labelledby="object-tab">
-							<h5 class="text-center mb-3">Đối Tượng</h5>
-							<div class="row g-4">
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="ethnic" class="form-label">Dân tộc</label> <select
-											class="form-select" id="ethnic" form="form-input" name="ethnic">
-											<option value="0">Chọn</option>
-											<option value="1">Kinh</option>
-											<option value="2">Mường</option>
-											<option value="3">Thái</option>
-											<option value="4">Dao</option>
-											<option value="5">Nùng</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="religion" class="form-label">Tôn giáo</label> <select
-											class="form-select" id="religion" form="form-input" name="religion">
-											<option value="0">Chọn</option>
-											<option value="1">Không</option>
-											<option value="2">Phật giáo</option>
-											<option value="3">Thiên chúa giáo</option>
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="form-group mb-3">
-								<label for="nation" class="form-label">Quốc tịch</label> <select
-									class="form-select" id="nation" form="form-input" name="nationality">
-									<option value="0">Chọn</option>
-									<option value="1">Việt Nam</option>
-									<option value="2">Lào</option>
-									<option value="3">Campuchia</option>
-								</select>
-							</div>
-							<div class="form-group mb-3">
-								<label for="wish" class="form-label">Trúng tuyển theo
-									nguyện vọng</label> <input type="text" class="form-control" id="wish"
-									name="wish" autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="graduation_year" class="form-label">Năm tốt
-									nghiệp THPT</label> <input type="text" class="form-control"
-									id="graduation_year" name="graduation_year" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="family" class="form-label">Thành phần gia
-									đình</label> <select class="form-select" id="family" form="form-input" name="family">
-									<option value="0">Chọn</option>
-									<option value="1">Viên chức</option>
-									<option value="2">Nông dân</option>
-									<option value="3">Tiểu thương</option>
-								</select>
-							</div>
-							<div class="row g-4">
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="training_object" class="form-label">Đối
-											tượng đào tạo</label> <select class="form-select"
-											id="training_object" form="form-input" name="training_object">
-											<option value="0">Chọn</option>
-											<option value="1">Đối tượng đào tạo 1</option>
-											<option value="2">Đối tượng đào tạo 2</option>
-											<option value="3">Đối tượng đào tạo 3</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="affiliate" class="form-label">Đơn vị liên
-											kết</label> <select class="form-select" id="affiliate"
-											form="form-input" name="affiliates">
-											<option value="0">Chọn</option>
-											<option value="1">Đơn vị liên kết 1</option>
-											<option value="2">Đơn vị liên kết 2</option>
-											<option value="3">Đơn vị liên kết 3</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="contact" role="tabpanel"
-							aria-labelledby="contact-tab">
-							<h5 class="text-center mb-3">Liên Lạc</h5>
-							<div class="form-group mb-3">
-								<label for="person_phone" class="form-label">Điện thoại</label>
-								<input type="text" class="form-control" id="person_phone"
-									name="personal_phone" autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="family_phone" class="form-label">Điện thoại
-									gia đình</label> <input type="text" class="form-control"
-									id="family_phone" name="family_phone" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="office_phone" class="form-label">Điện thoại
-									cơ quan</label> <input type="text" class="form-control"
-									id="office_phone" name="office_phone" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="email" class="form-label">Email</label> <input
-									type="email" class="form-control" id="email" name="email"
-									autocomplete="off" form="form-input" />
-							</div>
-							<div class="row g-4">
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="news_to" class="form-label">Báo tin cho</label> <input
-											type="text" class="form-control" id="news_to" name="news_to_person"
-											autocomplete="off" form="form-input" />
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group mb-3">
-										<label for="news_to_address" class="form-label">ở đâu</label>
-										<input type="text" class="form-control" id="news_to_address"
-											name="news_to_address" autocomplete="off" form="form-input" />
-									</div>
-								</div>
-							</div>
-							<div class="form-group mb-3">
-								<label for="address">Thông tin nơi ở</label>
-								<div class="form-check">
-									<input class="form-check-input" type="radio"
-										name="address" id="address_infor_in" value="1"
-										checked="" form="form-input" /> <label
-										class="form-check-label" for="address_infor_in"> Nội
-										trú </label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="radio"
-										name="address"  value="0"
-										form="form-input" /> <label class="form-check-label"
-										for="gender"> Ngoại trú </label>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="orther" role="tabpanel"
-							aria-labelledby="orther-tab">
-							<h5 class="text-center mb-3">Khác</h5>
-							<div class="form-group mb-3">
-								<label for="join_date_union" class="form-label">Ngày vào
-									Đoàn</label> <input type="text" class="form-control"
-									id="join_date_union" name="date_join_union" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="join_date_party" class="form-label">Ngày vào
-									Đảng</label> <input type="text" class="form-control"
-									id="join_date_party" name="date_join_party" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="entry_date" class="form-label">Ngày vào
-									trường</label> <input type="text" class="form-control" id="entry_date"
-									name="entry_date" autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="graduation_date" class="form-label">Ngày ra
-									trường</label> <input type="text" class="form-control"
-									id="graduation_date" name="graduation_date" autocomplete="off"
-									form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="job" class="form-label">Nghề/ Chức vụ</label> <input
-									type="text" class="form-control" id="job" name="job"
-									autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="laudatory" class="form-label">Khen thưởng</label> <input
-									type="text" class="form-control" id="laudatory"
-									name="laudatory" autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="discipline" class="form-label">Kỷ luật</label> <input
-									type="text" class="form-control" id="discipline"
-									name="discipline" autocomplete="off" form="form-input" />
-							</div>
-							<div class="form-group mb-3">
-								<label for="note" class="form-label">Ghi chú</label> <input
-									type="text" class="form-control" id="note" name="note"
-									autocomplete="off" form="form-input" />
-							</div>
-						</div>
-						<button type="submit" class="btn btn-primary">Thêm
+						<button type="submit" value="add-student" id="action" name="action" class="btn btn-primary">Thêm
 							Sinh Viên</button>
 					</div>
 					</form>
