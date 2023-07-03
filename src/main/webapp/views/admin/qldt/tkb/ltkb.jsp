@@ -96,6 +96,12 @@
                                 <input type="number" name="total_class" class="form-control">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="required">Tên lớp học: </label>
+                                <input type="text" name="name_class" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <button class="btn btn-primary mt-3">Thêm lịch học</button>
                 </form>

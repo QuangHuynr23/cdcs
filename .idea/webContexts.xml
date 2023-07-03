@@ -4,6 +4,8 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/common/admin/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common/admin" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/pqht/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/pqht" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/pqht/list-qht.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/pqht" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv/add-teacher.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv/edit-teacher.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv/list-teacher.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/admin/qldt/qlgv" />

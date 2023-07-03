@@ -50,8 +50,8 @@ public class LapLich_LtkbController extends HttpServlet{
 		Long teacherId = Long.parseLong(req.getParameter("teacher_id"));
 		Long totalClass = Long.parseLong(req.getParameter("total_class"));
 		Long subjectId = Long.parseLong(req.getParameter("subject_id"));
-
-		Schedule schedule = new Schedule(courseId,semesterId,departmentId,teacherId,subjectId, totalClass);
+ 		String nameClass = req.getParameter("name_class");
+		Schedule schedule = new Schedule(courseId,semesterId,departmentId,teacherId,subjectId, totalClass, nameClass);
 		scheduleDAO.insert(schedule);
 		resp.sendRedirect(req.getContextPath() + "/admin/qldt/tkb/dstkb");
     }

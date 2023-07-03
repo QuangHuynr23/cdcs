@@ -14,4 +14,5 @@ public class Schedule {
     private long teacherId;
     private long subjectId;
     private long totalClass;
+    private String nameClass;
 }

@@ -47,7 +47,6 @@ public class Qlmh_Add_SubjectController extends HttpServlet{
 		req.setAttribute("status", "success");
 		RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qldt/qlm/add-subject.jsp");
 		rd.forward(req, resp);
-    	resp.sendRedirect(req.getContextPath() + "admin/qldt/qlm/add-subject.jsp");
-    }
+ 	    }
     
 }

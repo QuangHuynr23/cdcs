@@ -43,7 +43,7 @@ public class ExportScheduleController extends HttpServlet {
                     departmentDAO.findById(schedule.getDepartmentId()) == null ? null : departmentDAO.findById(schedule.getDepartmentId()).getName(),
                     teacherDAO.findById(schedule.getTeacherId()) == null ? null : teacherDAO.findById(schedule.getTeacherId()).getFname() + " " + teacherDAO.findById(schedule.getTeacherId()).getLname(),
                     subjectDAO.findById(schedule.getSubjectId()) == null ? null :subjectDAO.findById(schedule.getSubjectId()).getName(),
-                    schedule.getTotalClass()
+                    schedule.getTotalClass(), schedule.getNameClass()
             ));
         }
         resp.setContentType("application/octet-stream");

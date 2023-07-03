@@ -47,9 +47,9 @@ public class SubjectDAO extends AbstractDAO<SubjectModel> implements ISubjectDAO
 
 	@Override
 	public void update(SubjectModel subjectModel) {
-		String sql ="UPDATE `chuyendecs`.`subjects` SET `code` = ?,`name` = ?,`department_id` = ?,`alls` = ?,`theory` = ?,`practice` = ?,`exercise` = ?,`createdat` = ?,`updatedat` = ?,`course_load` = ?, `semester` = ? WHERE `id` = ? ;";
+		String sql ="UPDATE `chuyendecs`.`subjects` SET `code` = ?,`name` = ?,`department_id` = ?,`alls` = ?,`theory` = ?,`practice` = ?,`exercise` = ?,`createdat` = ?,`updatedat` = ?,`course_load` = ? WHERE `id` = ? ;";
 		update(sql, subjectModel.getCode(),subjectModel.getName(),subjectModel.getDepartment_id()
-				,subjectModel.getAlls(),subjectModel.getTheory(),subjectModel.getPractice(),subjectModel.getExercise(),subjectModel.getCreatedat(),subjectModel.getUpdatedat(),subjectModel.getCourse_load(),subjectModel.getSemester(),subjectModel.getId());
+				,subjectModel.getAlls(),subjectModel.getTheory(),subjectModel.getPractice(),subjectModel.getExercise(),subjectModel.getCreatedat(),subjectModel.getUpdatedat(),subjectModel.getCourse_load(),subjectModel.getId());
 	}
 
 	@Override

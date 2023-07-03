@@ -11,3 +11,8 @@
 2023-06-19 23:22:23,225 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HUY\Desktop\quan-ly-sinh-vien-kma\src\main\resources
 2023-06-19 23:22:23,229 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-06-19 23:22:23,230 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HUY\Desktop\quan-ly-sinh-vien-kma\src\test\resources
+2023-06-30 12:47:33,795 [Worker-7: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-06-30 12:47:46,466 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-30 12:47:46,467 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HUY\Desktop\quan-ly-sinh-vien-kma\src\main\resources
+2023-06-30 12:47:46,469 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-30 12:47:46,470 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HUY\Desktop\quan-ly-sinh-vien-kma\src\test\resources

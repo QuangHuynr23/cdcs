@@ -48,16 +48,13 @@ public class ExcelExporterStudent {
         font.setFontHeight(14);
         style.setFont(font);
 
-        createCell(row, 0, "Code", style);
-        createCell(row, 1, "Name", style);
-        createCell(row, 2, "Class", style);
-        createCell(row, 3, "Gender", style);
-        createCell(row, 4, "Identify Number", style);
-        createCell(row, 5, "Bank", style);
-        createCell(row, 6, "Dob", style);
-        createCell(row, 7, "Address", style);
-        createCell(row, 8, "birthday", style);
-
+        createCell(row, 0, "Mã sinh viên", style);
+        createCell(row, 1, "Tên sinh viên", style);
+        createCell(row, 2, "Lớp học", style);
+        createCell(row, 3, "Giới tính", style);
+        createCell(row, 4, "Dob", style);
+        createCell(row, 5, "Ngày sinh", style);
+        createCell(row, 6, "Ghi chú", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -92,10 +89,7 @@ public class ExcelExporterStudent {
             createCell(row, columnCount++, studentResponse.getName(), style);
             createCell(row, columnCount++, studentResponse.getLop(), style);
             createCell(row, columnCount++, studentResponse.getGender(), style);
-            createCell(row, columnCount++, studentResponse.getIdentify_number(), style);
-            createCell(row, columnCount++, studentResponse.getBank(), style);
             createCell(row, columnCount++, studentResponse.getDob(), style);
-            createCell(row, columnCount++, studentResponse.getAddress(), style);
             createCell(row, columnCount++, studentResponse.getBirthday(), style);
         }
     }

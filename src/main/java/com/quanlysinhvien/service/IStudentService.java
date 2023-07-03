@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IStudentService extends  IGenericService<StudentModel>{
     List<StudentResponse> findAll();
-    List<StudentResponse> search(String code);
+    List<StudentResponse> search(String code, String name);
     @Override
     Long insert(StudentModel studentModel);
 

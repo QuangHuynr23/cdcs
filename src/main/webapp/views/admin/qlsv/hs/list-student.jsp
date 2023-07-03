@@ -44,6 +44,13 @@
 										autocomplete="off"/>
 								</div>
 							</div>
+							<div class="col-sm-4">
+							<div class="form-group mb-3">
+								<label class="form-label">Họ và tên</label> <input
+									type="text" class="form-control" id="name" name="name"
+									autocomplete="off"/>
+							</div>
+							</div>
 						</div>
 
 						<button style="margin-bottom: 20px;" type="submit"

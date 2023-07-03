@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.quanlysinhvien.dao.IRoleDAO;
 import com.quanlysinhvien.mapper.RoleMapper;
+import com.quanlysinhvien.mapper.StudentMapper;
 import com.quanlysinhvien.model.RoleModel;
+import com.quanlysinhvien.model.StudentModel;
 
 public class RoleDAO extends AbstractDAO<RoleModel> implements IRoleDAO{
 

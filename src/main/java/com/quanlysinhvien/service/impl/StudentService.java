@@ -41,9 +41,9 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public List<StudentResponse> search(String code) {
+    public List<StudentResponse> search(String code, String name) {
         List<StudentResponse> studentResponses = new ArrayList<>();
-        List<StudentModel> studentModels = studentDAO.search(code);
+        List<StudentModel> studentModels = studentDAO.search(code, name);
         for(StudentModel studentModel : studentModels){
             StudentResponse studentResponse = new StudentResponse();
             try{
@@ -61,6 +61,7 @@ public class StudentService implements IStudentService {
         }
         return studentResponses;
     }
+
 
     @Override
     public Long insert(StudentModel studentModel) {

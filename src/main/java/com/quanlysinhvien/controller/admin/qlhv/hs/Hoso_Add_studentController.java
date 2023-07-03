@@ -42,6 +42,7 @@ public class Hoso_Add_studentController extends HttpServlet{
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
 		if (req.getPart("file") == null || req.getPart("file").getSize() == 0) {
 			req.setAttribute("status", "faile");
 			RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qlsv/hs/add-student.jsp");
@@ -53,7 +54,7 @@ public class Hoso_Add_studentController extends HttpServlet{
 		for (Part part : req.getParts()) {
 			part.write(LOCATION_ROOT_SAVE + fileName);
 		}
-		req.setCharacterEncoding("UTF-8");
+
 		StudentModel studentModel = FormUtil.toModel(StudentModel.class, req);
 		studentModel.setImage(fileName);
 		Long status = studentService.insert(studentModel);

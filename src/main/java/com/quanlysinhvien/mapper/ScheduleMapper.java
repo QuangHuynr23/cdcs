@@ -17,6 +17,8 @@ public class ScheduleMapper implements RowMapper<Schedule>{
             schedule.setTeacherId(rs.getLong("teacher_id"));
             schedule.setTotalClass(rs.getLong("total_class"));
             schedule.setSubjectId(rs.getLong("subject_id"));
+            schedule.setTotalClass(rs.getLong("total_class"));
+            schedule.setNameClass(rs.getString("name_class"));
             return schedule;
         } catch (SQLException e) {
             return null;

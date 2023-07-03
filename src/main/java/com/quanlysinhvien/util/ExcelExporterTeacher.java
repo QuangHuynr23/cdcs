@@ -48,15 +48,15 @@ public class ExcelExporterTeacher {
         font.setFontHeight(14);
         style.setFont(font);
 
-        createCell(row, 0, "Code", style);
-        createCell(row, 1, "First name", style);
-        createCell(row, 2, "Last name", style);
-        createCell(row, 3, "Department", style);
-        createCell(row, 4, "Gender", style);
-        createCell(row, 5, "Phone", style);
-        createCell(row, 6, "Date of birth", style);
+        createCell(row, 0, "Mã giảng viên", style);
+        createCell(row, 1, "Họ đệm", style);
+        createCell(row, 2, "Tên", style);
+        createCell(row, 3, "Khoa", style);
+        createCell(row, 4, "Giới tính", style);
+        createCell(row, 5, "Số điện thoại", style);
+        createCell(row, 6, "Ngày sinh", style);
         createCell(row, 7, "Email", style);
-
+        createCell(row, 8, "Ghi chú", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {

@@ -74,11 +74,11 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void delete(Long id) {
-
+            teacherDAO.delete(id);
     }
 
     @Override
     public void update(TeacherModel teacherModel) {
-
+         teacherDAO.update(teacherModel);
     }
 }

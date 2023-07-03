@@ -49,15 +49,12 @@ public class ExcelExporterSubject {
         font.setFontHeight(14);
         style.setFont(font);
 
-        createCell(row, 0, "Code", style);
-        createCell(row, 1, "Name", style);
-        createCell(row, 2, "Alls", style);
-        createCell(row, 3, "Theory", style);
-        createCell(row, 4, "Practice", style);
-        createCell(row, 5, "Exercise", style);
-        createCell(row, 6, "Department", style);
-        createCell(row, 7, "Course load", style);
-
+        createCell(row, 0, "Mã môn học", style);
+        createCell(row, 1, "Tên môn học", style);
+        createCell(row, 2, "Tổng số tiết", style);
+        createCell(row, 3, "Khoa", style);
+        createCell(row, 4, "Tín chỉ", style);
+        createCell(row, 5, "Ghi chú", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -91,9 +88,6 @@ public class ExcelExporterSubject {
             createCell(row, columnCount++, respone.getCode(), style);
             createCell(row, columnCount++, respone.getName(), style);
             createCell(row, columnCount++, respone.getAlls(), style);
-            createCell(row, columnCount++, respone.getTheory(), style);
-            createCell(row, columnCount++, respone.getPractice(), style);
-            createCell(row, columnCount++, respone.getExercise(), style);
             createCell(row, columnCount++, respone.getDepartment_name(), style);
             createCell(row, columnCount++, respone.getCourse_load(), style);
         }

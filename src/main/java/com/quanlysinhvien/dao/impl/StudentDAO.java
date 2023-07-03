@@ -25,14 +25,18 @@ public class StudentDAO extends AbstractDAO<StudentModel> implements IStudentDAO
     }
 
     @Override
-    public List<StudentModel> search(String code) {
+    public List<StudentModel> search(String code,String name) {
         String sql ="SELECT * FROM chuyendecs.students WHERE 1 = 1";
         if(code !=null && !code.isEmpty()){
-            sql += " AND code = '" + code+"'";
+            sql += " AND code like '%" + code+"%'";
         }
-        List<StudentModel> studentModels = query(sql, new StudentMapper(), code);
+        if(name !=null && !name.isEmpty()){
+            sql += " AND name like '%" + name+"%'";
+        }
+        List<StudentModel> studentModels = query(sql, new StudentMapper(), code, name);
         return studentModels;
     }
+
 
     @Override
     public Long insert(StudentModel studentModel) {

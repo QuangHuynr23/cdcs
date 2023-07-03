@@ -31,46 +31,6 @@
 		<div class="title_text">
 			<h4 class="main_text">Trang web quản lý học viên KMA</h4>
 		</div>
-
-
-		<table class="main_table">
-			<thead>
-				<tr>
-					<th>Email</th>
-					<th>Passwword</th>
-					<th>Role</th>
-					<th>Quyền</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="row_table">
-					<td>quanghuynr23@gmail.com</td>
-					<td>123456</td>
-					<td>Admin</td>
-					<td>Phân Quyền</td>
-				</tr>
-				<tr>
-					<td>thelong@gmail.com</td>
-					<td>123456</td>
-					<td>Đào Tạo</td>
-					<td>Quản Lý Đào Tạo</td>
-				</tr>
-				<tr class="row_table">
-					<td>ducvinh@gmail.com</td>
-					<td>123456</td>
-					<td>Admin</td>
-					<td>Phân Quyền</td>
-				</tr>
-				<tr>
-					<td>quynhtrang@gmail.com</td>
-					<td>123456</td>
-					<td>Đào Tạo</td>
-					<td>Quản Lý Đào Tạo</td>
-				</tr>
-
-			</tbody>
-		</table>
-
 	</div>
 </body>
 </html>

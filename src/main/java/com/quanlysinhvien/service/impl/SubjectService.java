@@ -69,8 +69,8 @@ public class SubjectService implements ISubjectService{
 	@Override
 	public Long insert(SubjectModel subjectModel) {
 		// TODO Auto-generated method stub
-		 subjectDAO.insert(subjectModel);
-		return null;
+
+		return subjectDAO.insert(subjectModel);
 	}
 
 	@Override

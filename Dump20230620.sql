@@ -143,7 +143,7 @@ CREATE TABLE `schedules` (
   `total_class` bigint(20) DEFAULT NULL,
   `subject_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`courses_id`,`semester_id`,`department_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

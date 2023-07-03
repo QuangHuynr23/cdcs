@@ -29,9 +29,11 @@ public class Hoso_List_studentController extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 3461613811928964367L;
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String code = req.getParameter("code");
+		String code = req.getParameter("code") == null ? null : req.getParameter("code");
+		String name = req.getParameter("name") == null ? null : req.getParameter("name");
+
 		StudentResponse studentResponse = FormUtil.toModel(StudentResponse.class,req);
-		studentResponse.setListResult(studentService.search(code));
+		studentResponse.setListResult(studentService.search(code, name));
 		req.setAttribute(SystemConstant.MODEL+"student",studentResponse);
     	RequestDispatcher rd = req.getRequestDispatcher("/views/admin/qlsv/hs/list-student.jsp");
 		rd.forward(req, resp);

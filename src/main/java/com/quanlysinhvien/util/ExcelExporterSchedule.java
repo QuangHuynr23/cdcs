@@ -49,13 +49,14 @@ public class ExcelExporterSchedule {
         font.setFontHeight(14);
         style.setFont(font);
 
-        createCell(row, 0, "Courses", style);
-        createCell(row, 1, "Semester", style);
-        createCell(row, 2, "Department", style);
-        createCell(row, 3, "Teacher", style);
-        createCell(row, 4, "Subject", style);
-        createCell(row, 5, "Total class", style);
-
+        createCell(row, 0, "Khóa học", style);
+        createCell(row, 1, "Kì học", style);
+        createCell(row, 2, "Khoa", style);
+        createCell(row, 3, "Giảng viên", style);
+        createCell(row, 4, "Môn học", style);
+        createCell(row, 5, "Số lớp tín chỉ", style);
+        createCell(row, 6, "Tên Lớp", style);
+        createCell(row, 7, "Ghi chú", style);
     }
 
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
@@ -92,6 +93,7 @@ public class ExcelExporterSchedule {
             createCell(row, columnCount++, response.getTeacher(), style);
             createCell(row, columnCount++, response.getSubject(), style);
             createCell(row, columnCount++, response.getTotalClass(), style);
+            createCell(row, columnCount++, response.getNameClass(), style);
         }
     }
 

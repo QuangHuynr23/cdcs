@@ -14,4 +14,5 @@ public class ScheduleResponse {
     private String teacher;
     private String subject;
     private long totalClass;
+    private String nameClass;
 }

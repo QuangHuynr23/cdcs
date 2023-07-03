@@ -16,9 +16,9 @@ public class ScheduleDAO extends AbstractDAO<Schedule> implements IScheduleDAO {
     private Connection connection = MySQLConnection.getMySQLConnection();
 
     public Long insert(Schedule schedule) {
-        String sql = "INSERT INTO chuyendecs.schedules (courses_id,semester_id,department_id,teacher_id,total_class, subject_id) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO chuyendecs.schedules (courses_id,semester_id,department_id,teacher_id,total_class, subject_id, name_class) VALUES (?,?,?,?,?,?,?)";
         return insert(sql, schedule.getCoursesId(),schedule.getSemesterId(), schedule.getDepartmentId(),schedule.getTeacherId()
-        ,schedule.getTotalClass(),schedule.getSubjectId());
+        ,schedule.getTotalClass(),schedule.getSubjectId(),schedule.getNameClass());
     }
 
     public List<Schedule> findAll(){

@@ -8,7 +8,7 @@ import java.util.List;
 public interface IStudentDAO extends IAbstractDAO<StudentModel> {
     @Override
     List<StudentModel> findAll();
-    List<StudentModel> search(String code);
+    List<StudentModel> search(String code, String name);
     @Override
     Long insert(StudentModel studentModel);
 

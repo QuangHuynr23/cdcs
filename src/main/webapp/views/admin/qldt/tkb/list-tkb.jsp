@@ -44,9 +44,10 @@
                                 <th scope="col">Khóa học</th>
                                 <th scope="col">Kì học</th>
                                 <th scope="col">Khoa</th>
-                                <th scope="col">Môn học</th>
                                 <th scope="col">Giảng viên</th>
+                                <th scope="col">Môn học</th>
                                 <th scope="col">Số lớp tín chỉ</th>
+                                <th scope="col">Tên lớp</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,6 +59,7 @@
                                 <td>${schedule.teacher}</td>
                                 <td>${schedule.subject}</td>
                                 <td>${schedule.totalClass}</td>
+                                <td>${schedule.nameClass}</td>
                             </tr>
                         </c:forEach>
 
